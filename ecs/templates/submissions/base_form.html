@@ -1,0 +1,207 @@
+{% extends "core.html" %}
+{% load core i18n %} 
+
+{% block headertitle %}
+  <div id="info" style="display: none;"></div>
+{% endblock %}
+
+{% block headernav %}
+    <ul class="tab_header_groups">
+        {% block tab_header_groups %}
+        <li>
+            <a href="#">{% trans "Submission" %}</a>
+            <ul class="tab_headers" id="submission_headers">
+                {% block submission_tab_headers %}
+                    {% for tab, fieldsets in tabs %}
+                        {% ifnotequal tab "Zentrum" %}
+                        <li><a href="#tabs-{{ forloop.counter }}">{{ tab }}</a></li>
+                        {% endifnotequal %}
+                    {% endfor %}
+                {% endblock %}
+                {% block center_tabs %}
+                {% endblock %}
+            </ul>
+        </li>
+        {% endblock %}
+    </ul>
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+      <div class="main form">
+        <div id="tabs">
+          {% block tabs %}
+            {% for tab, fieldsets in tabs %}
+                {% ifnotequal tab "Zentrum" %}
+                <div id="tabs-{{ forloop.counter }}" class="tab">
+                    {% ifequal tab "Maßnahmen" %}
+                        {# FIXME (FMD2) #}
+                        <div class="field">
+                            <h3>Studienbezogen durchzuführende Therapie und Diagnostik</h3>
+                            {% with measure_formset as formset %}
+                                {% include "forms/tables/inline_formset.html" %}
+                            {% endwith %}
+                        </div>
+                        <div class="field">
+                            <h3>Routinemäßig durchzuführende Therapie und Diagnostik</h3>
+                            {% with routinemeasure_formset as formset %}
+                                {% include "forms/tables/inline_formset.html" %}
+                            {% endwith %}
+                        </div>
+                        <div class="field">
+                            <h3>Sonstige im Rahmen der Studie verabreichte Medikamente, deren Wirksamkeit und/oder Sicherheit nicht Gegenstand der Prüfung sind</h3>
+                            {% with nontesteduseddrug_formset as formset %}
+                                {% include "forms/tables/inline_formset.html" %}
+                            {% endwith %}
+                        </div>
+                    {% endifequal %}
+                                        
+                    {% ifequal tab "Unterlagen" %}
+                        {# FIXME (FMD2) #}
+                        <div class="field">
+                            {% if not readonly %}
+                                {% include "documents/upload_form.html" %}
+                            {% else %}
+                                {% include "documents/compact_list.html" %}
+                            {% endif %}
+                        </div>
+                    {% endifequal %}
+                    
+                    {% for legend, fields in fieldsets %}
+                        <div class="field fieldset_{{ forloop.counter }}">
+                            {% if legend %}
+                                <h3>{{ legend }}</h3>
+                            {% endif %}
+                            {% ifequal legend "Zentren im Ausland" %}
+                                {# FIXME (FMD2) #}
+                                {% with foreignparticipatingcenter_formset as formset %}
+                                    {% include "forms/tables/inline_formset.html" %}
+                                {% endwith %}                            
+                            {% endifequal %}                            
+                            <ol>
+                                {% for field_name in fields %}
+                                    {% with form|getitem:field_name as field %}
+                                        {% include "forms/field.html" %}
+                                    {% endwith %}
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endifnotequal %}
+            {% endfor %}
+          {% endblock %}
+        </div>
+
+        {{ investigator_formset.management_form }}
+        {{ investigatoremployee_formset.management_form }}
+        
+        <div id="investigator_formset">
+        {% for form in investigator_formset.forms %}
+            {% with forloop.counter0 as investigator_index %}
+            <div class="investigator_tab tab" id="investigator_tab{{ forloop.counter0 }}">
+                <div class="field">
+                    <h3 class="partbno">Zentrum</h3>
+                    <div class="investigator_form">
+                        {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                        {% endfor %}
+                        <ol>
+                            {% for field in form %}
+                                {% if not field.is_hidden %}
+                                    {% include "forms/field.html" %}
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+                <div class="field">
+                    <h3>Verantwortliche Mitarbeiter/innen an der klinischen Studie (an Ihrer Prüfstelle)</h3>
+                    {# XXX: reuse forms/tables/inline_formset.html (FMD2) #}
+                    <table class="inline_formset investigatoremployee_formset">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            {% for field in investigatoremployee_formset.empty_form %}
+                                {% if not field.is_hidden and not field.html_name|endswith:'-DELETE' %}
+                                    {% with field|get_field_info as field_info %}
+                                    <th class="label">
+                                        {{ field_info.label|default:field.label }}
+                                        {% if field_info.number %}
+                                            <span class="paperform_number">{{ field_info.number }}</span>
+                                        {% endif %}
+                                        {% if field_info.help_text %}
+                                        <span class="help_text">
+                                            {{ field_info.help_text }}
+                                        </span>
+                                        {% endif %}
+                                    </th>
+                                    {% endwith %}
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for form in investigatoremployee_formset.forms %}
+                            {% ifequal form|form_value:'investigator_index'|default:0|add:0 investigator_index %}
+                            <tr class="form">
+                                {% include "forms/tables/row.html" %}
+                            </tr>
+                            {% endifequal %}
+                        {% empty %}
+                            {% if not readonly %}
+                                {% with investigatoremployee_formset.empty_form as form %}
+                                    <tr class="form template">
+                                        {% include "forms/tables/row.html" %}
+                                    </tr>
+                                {% endwith %}
+                            {% endif %}
+                        {% endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endwith %}
+        {% endfor%}
+        </div>
+     </div>
+{% endblock %}
+
+{% block menuSelection %}submissions{% endblock %}
+{% block jsbottom %}
+    {{ block.super }}
+    <script type="text/javascript">
+        window.addEvent('domready', function(){
+            var setup = ecs.setupForms();
+
+            new ecs.FormFieldController(['id_project_type_reg_drug'], {
+                disable: true, 
+                sourceFieldClass: 'subchoice',
+                sources: ['id_project_type_reg_drug_within_indication', 'id_project_type_reg_drug_not_within_indication']
+            });
+
+            new ecs.FormFieldController(['id_project_type_medical_device'], {
+                disable: true,
+                sourceFieldClass: 'subchoice',
+                sources: [
+                    'id_project_type_medical_device_with_ce', 
+                    'id_project_type_medical_device_without_ce',
+                    'id_project_type_medical_device_performance_evaluation'
+                ],
+                toggleTab: {
+                    tab: setup.tabController.getTabForElement($('tabs-7')),
+                    message: '% trans "This tab may only be used when 2.1.4 is selected." %}'
+                }
+            });
+            
+            new ecs.FormFieldController(['id_project_type_reg_drug', 'id_project_type_non_reg_drug'], {
+                sources: [],
+                toggleTab: {
+                    tab: setup.tabController.getTabForElement($('tabs-6')),
+                    message: '{% trans "This tab may only be used when 2.1.2 is selected." %}'
+                }
+            });
+            
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "core.html" %}
+{% load i18n core %}
+
+{% block menuSelection %}tasks{% endblock %}
+
+{% block headertitle %}{% trans "Tasks" %}{% endblock %}
+
+{% block content %}
+    {% include "tasks/tasks.inc" %}
+{% endblock %}
+
+{% block jsbottom %}
+    {{ block.super }}
+    {% include "tasks/tasks_js.inc" %}
+{% endblock %}
+

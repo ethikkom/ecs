@@ -1,0 +1,115 @@
+ol {
+  margin: 0;
+  padding: 0;
+}
+.form.message ol li {
+  display: block;
+  clear: both;
+  list-style-type: none;
+  margin-bottom: 10px;
+  font-size: 9pt;
+}
+.form.message ol li label {
+  display: block;
+  width: 100px;
+  margin: 0 10px 10px 0;
+  text-align: right;
+  float: left;
+}
+.form.message ol li textarea {
+  height: 16em;
+  display: block;
+  width: 30em;
+}
+.form.message input, .form.message textarea {
+  border: 1px solid #999;
+  padding: 2px;
+}
+.form.message input[type="submit"] {
+  float: right;
+  margin-right: 140px;
+  background: #333;
+  color: #fff;
+}
+.message_display {
+  padding: 20px;
+  height: 100%;
+  font-size: 9pt;
+}
+
+.message_display .item{
+    position: relative;
+}
+
+.message_display ol li {
+  list-style: none;
+}
+.message_display li {
+  margin-bottom: 5px;
+}
+.message_display .actions {
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+.message_display pre {
+  padding: 20px;
+}
+.message_display .actions a {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.message_display img, .messages_overview img {
+  vertical-align: middle;
+}
+table.messages .threadstart {
+  border-top: 1px solid #cccccc;
+}
+.messages_header, .messages th, .messages td {
+  padding: 5px;
+}
+.messages th {
+  background: #eee;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  font-size: 11pt;
+}
+.messages td {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.message_display .item.odd {
+  background-color: #eeeeee;
+}
+.message_display .item.even {
+  background-color: #ececff;
+}
+
+/* icons */
+
+.icon_read, .icon_bump, .icon_answer, .icon_delegate, .icon_done, .icon_sort {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 16px;
+  height: 16px;
+}
+.icon_read {
+  background: url(/static/images/icons.png) -160px -128px no-repeat;
+}
+.icon_bump {
+  background: url(/static/images/icons.png) -240px -128px no-repeat;
+}
+.icon_answer {
+  background: url(/static/images/icons.png) -160px -64px no-repeat;
+}
+.icon_delegate {
+  background: url(/static/images/icons.png) -240px -208px no-repeat;
+}
+.icon_done {
+  background: url(/static/images/icons.png) -0 -160px no-repeat;
+}
+.icon_sort {
+  background: url(/static/images/icons.png) 0 -208px no-repeat;
+}

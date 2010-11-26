@@ -1,0 +1,85 @@
+{% load i18n %}
+
+<div id="submission_widget">
+
+{% include "submissions/filterform.inc" %}
+
+<ol class="submission_widget_list">
+{% for submission in submissions.object_list %}
+    <li class="submission_item">
+        {% with submission.current_submission_form as submission_form %}
+            <a href="{% url ecs.core.views.readonly_submission_form submission_form_pk=submission_form.pk %}">{{ submission.get_ec_number_display }}</a>
+        {% endwith %}
+        {{ submission.project_title|default:'<em>{% trans "No title." %}</em>' }}
+        {% with submission.medical_categories.all as categories %}
+            {% if categories %}
+                <div class="info">{% trans "Categories" %}: {% for cat in categories %}<em>{{ cat }}</em>{% if not forloop.last %}, {% endif %}{% endfor %}</div>
+            {% endif %}
+        {% endwith %}
+        {% with submission.expedited_review_categories.all as er_categories %}
+            {% if categories %}
+                <div class="info">{% trans "ExpeditedReviewCategories" %}: {% for cat in categories %}<em>{{ cat }}</em>{% if not forloop.last %}, {% endif %}{% endfor %}</div>
+            {% endif %}
+        {% endwith %}
+    </li>
+{% empty %}
+    <li><em>{% trans "No Submissions." %}</em></li>
+{% endfor %}
+</ol>
+
+<div class="paginator">
+    <a href="{% url ecs.core.views.submission_list %}">{% trans "More" %}</a>
+    {% if not submissions.number == 1 %}
+        <a href="#" class="first_page open-in-widget">first</a>
+    {% endif %}
+    {% if submissions.has_previous %}
+        <a href="#" class="prev_page open-in-widget">previous</a>
+    {% endif %}
+    {% trans "Page" %} {{ submissions.number }} {% trans "of" %} {{ submissions.paginator.num_pages }}
+    {% if submissions.has_next %}
+        <a href="#" class="next_page open-in-widget">next</a>
+    {% endif %}
+    {% if not submissions.number == submissions.paginator.num_pages %}
+        <a href="#" class="last_page open-in-widget">last</a>
+    {% endif %}
+</div>
+
+</div>
+
+<script type="text/javascript">
+  window.addEvent('domready', function(){
+      var widget = $('submission_widget');
+      var form = $('submission_list_filter');
+      form.getElements('input').each(function(input){
+          input.addEvent('change', function(){
+              form.submit();
+          });
+      });
+      var page_input = form.getElement('input[name="page"]');
+{% if not submissions.number == 1 %}
+      widget.getElement('a.first_page').addEvent('click', function(){
+          page_input.value = 1;
+          form.submit();
+      });
+{% endif %}
+{% if submissions.has_previous %}
+      widget.getElement('a.prev_page').addEvent('click', function(){
+          page_input.value = parseInt(page_input.value, 10) - 1;
+          form.submit();
+      });
+{% endif %}
+{% if submissions.has_next %}
+      widget.getElement('a.next_page').addEvent('click', function(){
+          page_input.value = parseInt(page_input.value, 10) + 1;
+          form.submit();
+      });
+{% endif %}
+{% if not submissions.number == submissions.paginator.num_pages %}
+      widget.getElement('a.last_page').addEvent('click', function(){
+          page_input.value = {{ submissions.paginator.num_pages }};
+          form.submit();
+      });
+{% endif %}
+  });
+</script>
+

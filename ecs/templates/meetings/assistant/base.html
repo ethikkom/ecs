@@ -1,0 +1,73 @@
+{% extends 'meetings/detail.html' %}
+{% load core i18n %}
+
+{% block meeting_detail %}
+<div id="meeting_assistant">
+    <div class="meeting_assistant_nav">
+      <h4>Navigation</h4>
+        {% with meeting.open_tops.count as open_top_count %}
+            <div class="button"><a href="{% url ecs.meetings.views.meeting_assistant_clear meeting_pk=meeting.pk %}">Clear</a></div>
+            {% if not meeting.started %}
+            <div class="button"><a href="{% url ecs.meetings.views.meeting_assistant_start meeting_pk=meeting.pk %}">Sitzung starten</a></div>
+            {% else %}
+                {% if not meeting.ended and open_top_count == 0 %}
+                    <div class="button"><a href="{% url ecs.meetings.views.meeting_assistant_stop meeting_pk=meeting.pk %}">Sitzung beenden</a></div>
+                {% endif %}
+                <div class="button"><a href="{% url ecs.meetings.views.meeting_assistant_comments meeting_pk=meeting.pk %}">{% trans 'Comments' %}</a></div>
+            {% endif %}
+            <ol class="info">
+                <li>TOPs: {{ meeting|length }}</li>
+                <li>Offene TOPs: {{ open_top_count }}</li>
+                <li>Offene TOPs mit Votum: {{ meeting.open_tops_with_vote.count }}</li>
+                <li>&nbsp;</li>
+                <li>
+                    {% if meeting.started %}
+                        Beginn: {{ meeting.started|date:'H:i' }} Uhr
+                    {% else %}
+                        Noch nicht begonnen.
+                    {% endif%}
+                </li>
+                <li>Geplanter Beginn: {{ meeting.start|date:'H:i' }} Uhr
+                </li>
+                <li>Geplantes Ende: {{ meeting.end|date:'H:i' }} Uhr
+                </li>
+                {% if meeting.ended %}
+                    <li>Ende: {{ meeting.ended|date:'H:i' }} Uhr</li>
+                {% endif %}
+                <li>
+                    Aktuelle Uhrzeit: <span id="clock">{% now "H:i" %}</span> Uhr
+                </li>
+            </ol>
+            <div class="navigation">
+              <h4>Wechsle nach:</h4>
+                {% if meeting.started %}
+                    {% block meeting_assistant_navigation %}
+                    <div class="search">
+                        <form action="{% url ecs.meetings.views.meeting_assistant_quickjump meeting_pk=meeting.pk %}">
+                            <input type="text" name="q" />
+                            <input type="submit" value="Suchen" />
+                        </form>
+                    </div>
+                    {% endblock %}
+                {% endif %}
+            </div>
+        {% endwith %}
+    </div>
+    <div id="meeting_assistant_body">
+        {% if not meeting.open_tops.exists and meeting.started and not meeting.ended %}<span style="color:red">Alle TOPs wurden geschlossen. Sie können die Sitzung jetzt beenden.</span>{% endif %}
+        {% block meeting_assistant_body %}{% endblock %}
+        {% block meeting_assistant_sidebar %}{% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+{% block jsbottom %}
+{{ block.super }}
+<script type="text/javascript">
+    window.addEvent('domready', function(){
+        setInterval(function(){
+            $('clock').innerHTML = (new Date()).format('%H:%M');
+        }, 6000);
+    });
+</script>
+{% endblock %}

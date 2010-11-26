@@ -1,0 +1,24 @@
+{% extends 'core.html' %}
+
+{% block htmltitle %}ECS Elektronische Einreichung{% endblock %}
+
+{% block headertitle %}
+Edit {{ submission }}
+{% endblock %}
+
+{% block content %}
+
+<h3>{{ submission.project_title }}</h3>
+<div>
+    {{ submission.german_project_title }}
+</div>
+<form action="" method="post">
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Speichern" />
+</form>
+
+{% endblock %}
+
+{% block menuSelection %}submissions{% endblock %}

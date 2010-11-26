@@ -1,0 +1,215 @@
+{% extends 'db/xhtml2pdf/skeleton.html' %}
+{% load core corepdf %}
+
+{% block title %}Antragsformular{% endblock %}
+
+{% block inline_css %}
+    {{ block.super }}
+    *{
+        line-height: 1em;
+    }
+    body{
+        font-size: 11pt;
+    }
+    
+    td, th{
+        text-align: left;
+        vertical-align: top;
+        padding: 0;
+        margin: 0;
+    }
+    table, tr, h1, h2, h3, h4, h5, h6, p{
+        padding: 0;
+        margin: 0;
+    }
+    
+    h1{
+        text-align: center;
+        margin: 0cm;
+        padding: 1em;
+    }
+    
+    h2{
+        font-size: 14pt;
+    }
+    h3{
+        font-size: 11pt;
+        font-weight: bold;
+    }
+    h4{
+        font-size: 11pt;
+        font-weight: normal;
+        margin-top: 1em;
+    }
+    
+    .value{
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    .small{
+        font-size: 10pt;
+    }
+    .checkbox{
+        font-family: monospace;
+    }
+    
+
+    table{
+        border: none;
+    }
+    
+    table.padded td,
+    table.padded th{
+        padding: 0.1cm;
+    }
+    
+    
+    table.border1,
+    table.part{
+        border: 1px solid #000000;
+    }
+    table.border2 td{
+        margin: 3px;
+        border: 1px solid #000000;
+    }
+    
+    table.withborders td,
+    table.withborders th{
+        border: 1px solid #000000;
+    }
+    table.withborders th{
+        border-bottom: 2px solid #000000;
+    }
+
+    table.withrowborders,
+    table.withrowborders tr{
+        border-bottom: 1px solid #000000;
+        border-top: 1px solid #000000;
+    }
+    
+    .infotext{
+        margin: 1em;
+        text-align: center;
+    }
+    
+
+    table.part{
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0px;
+        page-break-after: avoid;
+    }
+    table.part tr{
+        padding: 0px;
+    }
+    table.part td{
+        padding: 2px;
+    }
+    table.part h2{
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 0.2cm;
+        height: 2em;
+    }
+    
+    
+    table.section{
+        margin-top: 1em;
+        border-top: 1px solid #000000;
+    }
+    table.section td{
+        padding: 0;
+    }
+    table.section h3{
+        margin-top: 5px;
+        border-top: 1px solid #000000;
+        padding-top: 0.5em;
+    }
+    
+    div.indented{
+        margin-left: 1cm;
+    }
+    
+{% endblock %}
+
+{% block content %}
+
+    {% include "db/submissions/xhtml2pdf/head.html" %}
+
+    
+    {% tcwrap part %}
+        <h2>Teil A</h2>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_1.html" %}
+    
+    {% tcwrap section %}
+        <h3>2. Eckdaten der Studie</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_2_1.html" %}
+    {% include "db/submissions/xhtml2pdf/section_2_2-2_11.html" %}
+    
+    
+    {% tcwrap section %}
+        <h3>3a. Betrifft nur Studien gemäß AMG: Angaben zur Prüfsubstanz (falls nicht in Österreich registriert):</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_3a.html" %}
+
+    {% tcwrap section %}
+        <h3>3b. Sonstige im Rahmen der Studie verabreichte Medikamente, deren Wirksamkeit und/oder Sicherheit nicht Gegenstand der Prüfung sind:</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_3b.html" %}
+    
+    
+    {% tcwrap section %}
+        <h3>4. Betrifft nur Studien gemäß MPG: Angaben zum Medizinprodukt:</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_4.html" %}
+    
+    {% tcwrap section %}
+        <h3>5. Angaben zur Versicherung (gemäß §32 Abs.1 Z.11 und Z.12 und Abs.2 AMG; §§47 und 48 MPG)</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_5.html" %}
+    
+    {% tcwrap section %}
+        <h3>6. Angaben zur durchzuführenden Therapie und Diagnostik</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_6.html" %}
+    
+    {% tcwrap section %}
+        <h3>7. Strukturierte Kurzfassung des Projektes (<i><u>in deutscher Sprache, kein Verweis auf das Protokoll</u></i>)</h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_7.html" %}
+
+    {% tcwrap section %}
+            <h3>8. Biometrie, Datenschutz:</h3>
+        </td><td style="text-align:right; font-style:italic">
+            !!! Achtung: Pkt. 8.1 ist in jedem Fall auszufüllen !!!
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_8.html" %}
+
+    <pdf:nextpage/>
+
+    {% tcwrap section %}
+        <h3>9. Liste der eingereichten Unterlagen <span style="font-weight:normal">(wenn nicht gesondert dem Antrag beiliegend)</span></h3>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/section_9.html" %}
+
+
+{% for inv in submission_form.investigators.all %}
+    <pdf:nextpage/>
+    {% tcwrap part %}
+        <h2>Teil B</h2>
+    {% endtcwrap %}
+    {% include "db/submissions/xhtml2pdf/part_b.html" %}
+{% endfor %}
+
+{% block footer %}
+  Antragsformular - &Ouml;sterreichische Ethikkommissionen, Version 6.0, 03.07.2009
+{% endblock %}
+
+{% endblock %}
+
+

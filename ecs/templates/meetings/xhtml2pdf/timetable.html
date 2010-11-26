@@ -1,0 +1,39 @@
+{% extends 'db/xhtml2pdf/skeleton.html' %}
+
+{% block title %}Meeting Timetable{% endblock %}
+
+{% block content %}
+    {% include 'db/xhtml2pdf/ec_head.inc' %}
+    
+    <table border="1">
+    
+    <tr style="font-weight:bold; font-size:large;">
+        <th width="15%"></th>
+        <th>Anwesenheit {{ meeting.title }}</th>
+        <th>Zeitfenster</th>
+    </tr>
+    
+    {% for row in timetable %}
+        <tr>
+            <td>{{ row.user }}</td>
+            <td>{% for entry in row.entries %}{{ entry.submission.get_ec_number_display }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+            <td>
+                {{ row.times }},
+                <span style="color:red;">
+                {% if row.entries|length == 1 %}
+                    1 Projekt
+                {% else %}
+                    {{ row.entries|length }} Projekte
+                {% endif %}
+                </span>
+            </td>
+        
+        </tr>
+    {% endfor %}
+    
+    </table>
+{% endblock %}
+
+{% block footer %}Zeitfenster{{ meeting.title }} {{ meeting.start|date:'d.m.Y' }}{% endblock %}
+
+

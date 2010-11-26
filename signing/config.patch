@@ -1,0 +1,20 @@
+--- conf/pdf-as/cfg/config.properties	2010-11-04 18:32:55.000000000 +0100
++++ conf/pdf-as/cfg/config.properties	2010-11-16 11:34:19.000000000 +0100
+@@ -19,7 +19,7 @@
+ # remove/disable this key to enable the old dynamic build process
+ # Use this key to overcome SSL Problems with dataurl communication.
+ # Note: Assure that this URL is accessible from the citizen card environment.
+-#retrieve_signature_data_url_override=http://localhost:8080/pdf-as/RetrieveSignatureData
++retrieve_signature_data_url_override=http://s.ecsdev.ep3.at:4780/pdf-as/RetrieveSignatureData
+ 
+ # Beim Signieren: Überprüfung ob Dokument PDF-Version 1.4 (oder weniger) hat 
+ strict_mode=false
+@@ -88,7 +88,7 @@
+ moc.available_for_commandline=false
+ 
+ # MOCCA signature
+-moc.sign.url=http://ecsdev.ep3.at:4780/bkuonline/http-security-layer-request
++moc.sign.url=http://s.ecsdev.ep3.at:4780/bkuonline/http-security-layer-request
+ moc.sign.KeyboxIdentifier=SecureSignatureKeypair
+ 
+ # A1 settings

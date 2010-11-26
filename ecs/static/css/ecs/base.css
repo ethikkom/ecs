@@ -1,0 +1,241 @@
+/* margin and padding to zero, because of ecaxt aligning tags */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* structure */
+
+body {
+  background: white;
+  overflow: auto;
+}
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#header {
+  position: absolute;
+  right: 220px;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  background: #d8e6ef;
+  padding: 10px;
+  display: block;
+  border-bottom: 1px solid #999;
+  height: 80px;
+}
+#headertitle, #headertext {
+  float: left;
+  width: 90%;
+  display: block;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+#headernav {
+  position: relative;
+  display: block;
+  float: left;
+  width: 100%;
+  background: #d8e6ef;
+  font-size: 11pt;
+}
+#content {
+  position: absolute;
+  top: 100px;
+  right: 220px;
+  bottom: 0px;
+  left: 0px;
+  display: block;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.innerwrap {
+  margin: 10px;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0; 
+  right: 0;
+  width: 220px; /*Width of frame div*/
+  height: 100%;
+  overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+  color: #333;
+  background: #f6f6e9;
+}
+
+/* content-specific */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#content h1 {
+  display: block;
+  font-size: 1.4em;
+  letter-spacing: 1px;  
+  margin-bottom: 20px;
+  font-weight: lighter;
+}
+#content h2 {
+  display: block;
+  font-size: 1.2em;
+  letter-spacing: 1px;  
+  margin-bottom: 20px;
+  font-weight: lighter;
+}
+#content h3 {
+  display: block;
+  font-size: 1.0em;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+.main.form h3 {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+#content h4 {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+#content p {
+  margin-bottom: 20px;
+  font-size: 10pt;
+}
+#content a {
+  text-decoration: none;
+  color: #2b558e;
+  font-size: 10pt;
+}
+#content a:hover {
+  text-decoration: underline;
+}
+a {
+  outline: 0;
+}
+
+
+/* header */
+
+#header {
+  color: #333;
+  background: #D8E6EF;
+}
+#headertitle h1 {
+  font-size: 12pt;
+  margin-bottom: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#headertext p {
+  font-size: 10pt;
+  line-height: 14pt;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* sidebar */
+
+#logo, #account, #usertoolbar, #usermenu {
+  width: 200px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+#logo {
+  height: 53px;
+  background: #fff;
+}
+#account {
+  min-height: 80px;
+}
+#usertoolbar {
+  min-height: 10px;
+  background: #ededdc;
+}
+#usermenu {
+  min-height: 300px;
+  border-bottom: none;
+}
+#usermenu .elements {
+  display: none;
+}
+
+#sidebar ul {
+  list-style-type: none;
+}
+#sidebar li {
+  font-size: 11pt;
+  line-height: 16pt;
+}
+#sidebar li li {
+  margin-left: 10px;
+  font-size: 10pt;
+  border-left: 1px solid #e3e3bf;
+}
+#sidebar img {
+  border: none;
+}
+#sidebar p {
+  margin: 10px 0;
+}
+#sidebar a {
+  text-decoration: none;
+  color: #2b558e;
+}
+#toggle_sidebar_button {
+  position: absolute;
+  top: 233px;
+  right: 22px;
+  width: 30px;
+  height: 30px;
+  z-index: 200;
+}
+.toggle_sidebar {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+
+
+/* general links */
+
+#sidebar a, a img {
+  text-decoration: none;
+  border: none !important;
+}
+
+.profile_data td, .profile_data th {
+  vertical-align: top;
+}
+
+/* fullscreen editor */
+
+.ecs-DragDropFrameOverlay {
+  background-color: #ff0000;
+  opacity: 0.5;
+  position: absolute;
+}
+.ecs-FullscreenEditor {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #cccccc;
+  z-index: 100000;
+}
+.ecs-FullscreenEditor textarea{
+  width: 90%;
+  height: 90%;
+  margin: 20px;
+  background-color: #ffffff;
+}
+.ecs-FullscreenEditor .ecs-TextAreaToolbar {
+  margin: 20px 20px 0;
+}

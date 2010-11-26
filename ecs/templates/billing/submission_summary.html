@@ -1,0 +1,35 @@
+{% extends "core.html" %}
+{% load core %}
+
+{% block menuSelection %}administration{% endblock %}
+
+{% block htmltitle %}Rechnungsstellung - Einreichungen{% endblock %}
+
+{% block headertitle %}
+    Rechnungsstellung - Einreichungen
+{% endblock %}
+
+{% block content %}
+    <a href="{% url ecs.documents.views.download_document document_pk=xls_doc.pk %}">Detailierte Auflistung</a>
+
+    <h2>Zusammenfassung</h2>
+    <table class="billing_summary">
+        {% for item in summary.values %}
+            <tr>
+                <td>{{ item.label }}</td>
+                <td>{{ item.count }}</td>
+                <td><span class="price">{{ item.price.price|euro }}</span></td>
+                <td><span class="price">{{ item.price.text }}</span></td>
+                <td><span class="price">{{ item.price.price|multiply:item.count|euro }}</span></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>Betragssumme (brutto = netto)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ total|euro }}</td>
+        </tr>
+    </table>
+{% endblock %}
+

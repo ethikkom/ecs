@@ -1,0 +1,92 @@
+/* dashboard */
+
+#dashboard {
+
+}
+.dashboard_widget {
+  display: block;
+  float: left;
+  border: 1px solid #D8E6EF;
+  padding: 10px;
+  background-color: #f6f6e9;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin: 0 10px 10px 0;
+  width: 45%;
+  min-width: 340px;
+  min-height: 200px;
+}
+.dashboard_widget h3 {
+  margin-bottom: 10px;
+}
+.dashboard_widget td {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.dashboard_widget .messages,
+.dashboard_widget .submission_widget_list {
+  list-style: none;
+}
+.dashboard_widget .messages_header {
+  margin-bottom: 5px;
+  font-size: 11pt;
+}
+.dashboard_widget .messages > li,
+.dashboard_widget .submission_widget_list  > li {
+  clear: both;
+  position: relative;
+}
+.dashboard_widget .messages > li {
+  height: 70px;
+  padding: 5px 30px;
+  overflow: hidden;
+}
+.dashboard_widget .submission_widget_list  > li {
+  padding: 5px 10px;
+}
+.dashboard_widget .messages > li.odd,
+.dashboard_widget .submission_widget_list > li.odd {
+  background-color: #e8e8d8;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+}
+.dashboard_widget .messages > li.even,
+.dashboard_widget .submission_widget_list > li.even {
+  background-color: #efefdd;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+}
+.dashboard_widget .unread {
+  display: inline-block;
+  background: url(/static/images/icons.png) -160px -32px no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-left: -20px;
+}
+.dashboard_widget .messages > li .head {
+  display: block;
+  padding-bottom: 5px;
+  margin-left: -27px;
+}
+.dashboard_widget .messages > li .title {
+  font-weight: bold;
+}
+.dashboard_widget .user {
+  display: block;
+  margin-top: 5px;
+  font-size: 10pt;
+}
+.dashboard_widget .actions {
+  width: 30px;
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+.dashboard_widget .actions a {
+  display: inline-block;
+}
+.dashboard_widget img {
+  vertical-align: middle;
+}

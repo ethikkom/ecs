@@ -1,0 +1,91 @@
+{% extends 'shell.html' %}
+
+{% load version_tag %}
+
+{% block htmlbody %}
+<div id="container">
+
+	  <div id="header">
+        {% block header %}
+            <div id="headertitle">
+                <h1>{% block headertitle %}{% endblock %}</h1>
+            </div>
+            <div id="headertext">
+                {% block headertext %}
+                {% endblock %}
+            </div>
+            <div id="headernav">
+                {% block headernav %}
+                {% endblock %}
+                {% block header_actions %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+	  </div>
+
+    <div id="content">
+      <div class="innerwrap">
+	    {% block content %}
+	    {% endblock %}
+      </div>
+    </div>
+
+  <span id="toggle_sidebar_button"><a href="#" id="toggle_sidebar" class="toggle_sidebar" title="Sidebar verstecken/wiederherstellen" style="background: url(/static/images/icons.png) -320px -128px no-repeat;"></a></span>
+    
+    <div id="sidebar">
+        {% block sidebar %}
+            <div id="logo">
+                {% block logo %}
+                    <img src="{{ MEDIA_URL }}/images/logo.png" alt="EC- Meduni Wien"/>
+                    <small>{% current_version %}</small>
+                {% endblock %}
+            </div>
+            <div id="account">
+                {% block account %}
+                {% endblock %}	        
+            </div>
+            <div id="usertoolbar">
+                {% block usertoolbar %}
+                {% endblock %}
+            </div>
+            <div id="usermenu">
+                {% block usermenu %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+    
+    <div id="footer">
+        {% block footer %}
+        {% endblock footer %}
+    </div>
+  
+</div>
+{% endblock %}
+
+{% block jsbottom %}
+    {{ block.super }}
+  <script type="text/javascript">
+    window.addEvent('domready', function() {
+        var sidebar = $$('#sidebar')[0];
+        var header = $$('#header')[0];
+        var content = $$('#content')[0];
+        sidebar.set('morph', {duration: 'short', transition: Fx.Transitions.Sine.easeOut});
+        header.set('morph', {duration: 'short', transition: Fx.Transitions.Sine.easeOut});
+        content.set('morph', {duration: 'short', transition: Fx.Transitions.Sine.easeOut});
+        $('toggle_sidebar').addEvent('click', function() {
+            if (sidebar.getStyle('width') == '0px') {
+                sidebar.morph({width: '220px'});
+                header.morph({right: '220px'});
+                content.morph({right: '220px'});
+            } else {
+                sidebar.morph({width: '0px'});
+                header.morph({right: '0px'});
+                content.morph({right: '0px'});
+            }
+        });
+    });
+  </script>
+{% endblock %}
+
+

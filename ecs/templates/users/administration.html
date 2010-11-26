@@ -1,0 +1,148 @@
+{% extends 'administration/detail.html' %}
+{% load i18n userutils %}
+
+{% block administration_detail %}
+<h2>{% trans "List of Users" %} ({{ users.paginator.count }})</h2>
+
+<form id="{{ form_id }}" action="" method="post">
+    <ul class="useradministration_choose">
+        <li><label for="id_approval">{% trans "Approval" %}:</label> {{ filterform.approval }}</li>
+        <li><label for="id_group">{% trans "Group" %}:</label> {{ filterform.group }}</li>
+        <li><label for="id_keyword">{% trans "Search" %}:</label> {{ filterform.keyword }}</li>
+    </ul>
+    {{ filterform.page }}
+</form>
+
+<div class="paginator">
+    {% if not users.number == 1 %}
+        <a href="#" class="first_page">first</a>
+    {% endif %}
+    {% if users.has_previous %}
+        <a href="#" class="prev_page">previous</a>
+    {% endif %}
+    {% trans "Page" %} {{ users.number }} {% trans "of" %} {{ users.paginator.num_pages }}
+    {% if users.has_next %}
+        <a href="#" class="next_page">next</a>
+    {% endif %}
+    {% if not users.number == users.paginator.num_pages %}
+        <a href="#" class="last_page">last</a>
+    {% endif %}
+</div>
+
+<table class="user_list">
+    <tr>
+        <th>{% trans "User" %}</th>
+        <th title="{% trans "Unapproved users may not be able to sumit studies" %}">{% trans "Approval" %}</th>
+        <th title="{% trans "If you mark an user indisposed, somone else has to do the users work" %}">{% trans "Indisposed" %}</th>
+        <th title="{% trans "Inactive users are not able to log into the system" %}">{% trans "Active" %}</th>
+    </tr>
+    {% for profile_user in users.object_list %}
+        <tr>
+            <td>
+                <a href="{% url ecs.users.views.details user_pk=profile_user.pk %}">
+                    {% if not profile_user.first_name and not profile_user.last_name %}
+                        {{ profile_user }}
+                    {% else %}
+                        {% if profile_user.ecs_profile.gender == 'f' %}{% trans "Ms." %}{% endif %}
+                        {% if profile_user.ecs_profile.gender == 'm' %}{% trans "Mr." %}{% endif %}
+                        {{ profile_user.ecs_profile.title }} {{ profile_user.first_name }} {{ profile_user.last_name }}
+                    {% endif %}
+                    {% if profile_user.ecs_profile.phantom %}
+                        ({% trans "phantom" %})
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                {% if profile_user|has_flag:'approved_by_office' %}
+                    <a href="{% url ecs.users.views.approve user_pk=profile_user.pk %}">{% trans "Revoke Approval" %}</a>
+                {% else %}
+                    <a href="{% url ecs.users.views.approve user_pk=profile_user.pk %}">{% trans "Approve" %}</a>
+                {% endif %}
+            </td>
+            <td>
+                {% if profile_user|has_flag:'indisposed' %}
+                    <a href="{% url ecs.users.views.toggle_indisposed user_pk=profile_user.pk %}">{% trans "Unmark Indisposed" %}</a>
+                {% else %}
+                    <a href="{% url ecs.users.views.toggle_indisposed user_pk=profile_user.pk %}">{% trans "Mark Indisposed" %}</a>
+                {% endif %}
+            </td>
+            <td>
+                {% if profile_user.is_active %}
+                    <a href="{% url ecs.users.views.toggle_active user_pk=profile_user.pk %}">{% trans "Deactivate" %}</a>
+                {% else %}
+                    <a href="{% url ecs.users.views.toggle_active user_pk=profile_user.pk %}">{% trans "Activate" %}</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="4"><em>{% trans "No Users." %}</em></td></tr>
+    {% endfor %}
+</table>
+
+<div class="paginator">
+    {% if not users.number == 1 %}
+        <a href="#" class="first_page">first</a>
+    {% endif %}
+    {% if users.has_previous %}
+        <a href="#" class="prev_page">previous</a>
+    {% endif %}
+    {% trans "Page" %} {{ users.number }} {% trans "of" %} {{ users.paginator.num_pages }}
+    {% if users.has_next %}
+        <a href="#" class="next_page">next</a>
+    {% endif %}
+    {% if not users.number == users.paginator.num_pages %}
+        <a href="#" class="last_page">last</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block jsbottom %}
+    {{ block.super }}
+    <script type="text/javascript">
+        window.addEvent('domready', function(){
+            var form = $('{{ form_id }}');
+            var page_input = form.getElement('input[name="page"]');
+
+            form.getElements('input').each(function(input){
+                input.addEvent('change', function(){
+                    page_input.value = 1;
+                    $('{{ form_id }}').submit();
+                });
+            });
+            form.getElements('select').each(function(input){
+                input.addEvent('change', function(){
+                    page_input.value = 1;
+                    $('{{ form_id }}').submit();
+                });
+            });
+
+            $$('.paginator').each(function(paginator){
+{% if not users.number == 1 %}
+                paginator.getElement('a.first_page').addEvent('click', function(){
+                    page_input.value = 1;
+                    form.submit();
+                });
+{% endif %}
+{% if users.has_previous %}
+                paginator.getElement('a.prev_page').addEvent('click', function(){
+                    page_input.value = parseInt(page_input.value, 10) - 1;
+                    form.submit();
+                });
+{% endif %}
+{% if users.has_next %}
+                paginator.getElement('a.next_page').addEvent('click', function(){
+                    page_input.value = parseInt(page_input.value, 10) + 1;
+                    form.submit();
+                });
+{% endif %}
+{% if not users.number == users.paginator.num_pages %}
+                paginator.getElement('a.last_page').addEvent('click', function(){
+                    page_input.value = {{ users.paginator.num_pages }};
+                    form.submit();
+                });
+{% endif %}
+            });
+        });
+    </script>
+{% endblock %}
+

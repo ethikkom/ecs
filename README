@@ -1,0 +1,39 @@
+README for the ETHICS COMMITTEE SYSTEM
+
+
+Tested Systems
+
+  * Ubuntu 10.04 LTS [1]
+  * OpenSUSE 11.2/11.3 [2]
+  * Mac OS X 10.5/10.6 [3]
+  * Windows 7 [4]
+  * OpenBSD [5]
+
+Dependencies
+
+  * python [6]
+  * python headers
+  * your native compiler chain
+
+Manifest
+
+ * FAQ                -- Frequently asked questions
+ * INSTALL            -- Setup information
+ * README             -- this file
+ * autovm             -- Automatic virtual machine creation
+ * bootstrap.py       -- Python application for bootstrapping         
+ * deployment         -- Deployment specific files and dirs
+ * ecs                -- Main Application
+ * fabfile.py         -- Main Fabric make file  
+ * signing            -- Signing Application (java)
+ * sys                -- Container Application (contains knowledge about all
+                                                sub applications) 
+
+
+[1] http://www.ubuntu.com/
+[2] http://www.opensuse.org/en/
+[3] http://www.apple.com/macosx/
+[4] http://www.microsoft.com/windows/
+[5] http://openbsd.org/
+[6] http://python.org/
+

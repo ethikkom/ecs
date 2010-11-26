@@ -1,0 +1,35 @@
+{% load core corepdf %}
+
+<p>
+    5.1 Eine Versicherung ist erforderlich: 
+    {{ submission_form.insurance_name|checkbox }} ja 
+    {{ submission_form.insurance_name|not|checkbox }} nein. Wenn <b>ja</b>: 
+</p>
+
+<table>
+    <tr><td width="6cm">
+        5.1.1 Versicherungsgesellschaft: 
+    </td><td class="value">
+        {{ submission_form.insurance_name }}
+    </td></tr><tr><td>
+        5.1.2 Adresse:
+    </td><td class="value">
+        {{ submission_form.insurance_address_1 }}
+    </td></tr><tr><td>
+        5.1.3 Telefon: 
+    </td><td class="value">
+        {{ submission_form.insurance_phone }}
+    </td></tr><tr><td>
+        5.1.4 Polizzennummer:
+    </td><td class="value">
+        {{ submission_form.insurance_contract_number }}
+    </td></tr><tr><td>
+        5.1.5 Gültigkeitsdauer:
+    </td><td class="value">
+        {{ submission_form.insurance_validity }}
+    </td></tr>
+</table>
+
+<div class="infotext">
+    <i><b>Diese Angaben müssen in der Patienten- / Probandeninformation enthalten sein!</b></i>
+</div>

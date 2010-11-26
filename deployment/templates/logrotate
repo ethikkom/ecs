@@ -1,0 +1,9 @@
+%(logdir)s/%s(logfiles)s {
+        daily
+        missingok
+        rotate 14
+        compress
+        delaycompress
+        notifempty
+        copytruncate
+}

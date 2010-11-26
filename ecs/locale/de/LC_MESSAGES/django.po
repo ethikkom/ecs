@@ -1,0 +1,2646 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-19 11:25+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: settings.py:58
+msgid "German"
+msgstr "Deutsch"
+
+#: billing/models.py:13
+msgid "All studies except multicentre drug studies"
+msgstr "Alle Studien außer multizentrische Arzneimittelstudien"
+
+#: billing/models.py:14
+msgid "Multicentre drug trials for controlling ethics committees"
+msgstr "Multizentrische Arzneimittelstudien für Leit-Ethikkommissionen"
+
+#: billing/models.py:15
+msgid "Multicentre drug trials for locally responsible ethics committees"
+msgstr ""
+"Multizentrische Arzneimittelstudien für lokal zuständige Ethikkommissionen"
+
+#: billing/models.py:16
+msgid "fee exemption"
+msgstr "Gebührenbefreiung"
+
+#: billing/models.py:17
+msgid "External Reviewer"
+msgstr "External Reviewer"
+
+#: billing/stats.py:9
+msgid "fees note - local EC"
+msgstr "Gebührennoten - lokale EK"
+
+#: billing/stats.py:14
+msgid "fees note - AMG"
+msgstr "Gebührennoten - AMG"
+
+#: billing/stats.py:19
+msgid "fees note - MPG"
+msgstr "Gebührennoten - MPG"
+
+#: billing/stats.py:24
+msgid "fees note - other"
+msgstr "Gebührennoten - sonstige"
+
+#: billing/stats.py:29
+msgid "fees note - controlling-EC monocentric"
+msgstr "Gebührennoten - Leit-EK monozentrisch"
+
+#: billing/stats.py:34
+msgid "fees note - controlling-EC multicentric"
+msgstr "Gebührennoten - Leit-EK multizentrisch"
+
+#: billing/stats.py:40
+msgid "late filed fees notes"
+msgstr "Gebührennotennachreichungen"
+
+#: billing/views.py:46
+msgid "statistical result"
+msgstr "Statistikergebnis"
+
+#: billing/views.py:79 billing/views.py:145
+msgid "amt."
+msgstr "Anz."
+
+#: billing/views.py:79 core/models/submissions.py:124
+msgid "EC-Number"
+msgstr "EK-Number"
+
+#: billing/views.py:79
+msgid "company"
+msgstr "Firma"
+
+#: billing/views.py:79
+msgid "Eudract-Nr."
+msgstr "Eudract-Nr."
+
+#: billing/views.py:79 core/forms/layout.py:53 core/forms/layout.py:54
+msgid "applicant"
+msgstr "Antragsteller"
+
+#: billing/views.py:79
+msgid "clinic"
+msgstr "Klinik"
+
+#: billing/views.py:79 billing/views.py:145
+msgid "sum"
+msgstr "Summe"
+
+#: billing/views.py:105
+msgid "Billing request"
+msgstr ""
+
+#: billing/views.py:145
+msgid "reviewer"
+msgstr "Gutachter"
+
+#: billing/views.py:145
+msgid "EC-Nr."
+msgstr "EK-Nr"
+
+#: billing/views.py:172
+msgid "Payment request"
+msgstr ""
+
+#: communication/models.py:209
+#, python-format
+msgid "New ECS-Mail: from %(sender)s to %(receiver)s."
+msgstr "Neue ECS-Mail: von %(sender)s an %(receiver)s."
+
+#: communication/models.py:210
+#, python-format
+msgid "Subject: %(subject)s%(linesep)s%(text)s"
+msgstr "Betreff: %(subject)s%(linesep)s%(text)s"
+
+#: communication/views.py:35
+#, python-format
+msgid "%(sender)s schrieb:%(linesep)s> %(text)s"
+msgstr "%(sender)s schrieb:%(linesep)s> %(text)s"
+
+#: communication/management/commands/unreadmessages.py:35
+#, python-format
+msgid "unread ECS messages for %(user)s"
+msgstr "ungelesende ECS Nachrichten für %(user)s"
+
+#: core/diff.py:100
+msgid "No Information"
+msgstr "Keine Angaben"
+
+#: core/diff.py:102 core/forms/fields.py:44
+msgid "Yes"
+msgstr "Ja"
+
+#: core/diff.py:104 core/forms/fields.py:44
+msgid "No"
+msgstr "Nein"
+
+#: core/diff.py:164
+#, python-format
+msgid "Name: %(name)s, Investigator: %(investigator)s"
+msgstr "Name: %(name)s, Prüfarzt: %(investigator)s"
+
+#: core/diff.py:187
+#, python-format
+msgid ""
+"Generic Name: %(generic_name)s, Preparation Form: %(preparation_form)s, "
+"Dosage: %(dosage)s"
+msgstr ""
+
+#: core/diff.py:265
+msgid "Auslandszentren"
+msgstr ""
+
+#: core/diff.py:266
+msgid "Zentren"
+msgstr ""
+
+#: core/diff.py:267
+msgid "Studienbezogen/Routinemäßig durchzuführende Therapie und Diagnostik"
+msgstr ""
+
+#: core/diff.py:268
+msgid ""
+"Sonstige im Rahmen der Studie verabreichte Medikamente, deren Wirksamkeit "
+"und/oder Sicherheit nicht Gegenstand der Prüfung sind"
+msgstr ""
+
+#: core/diff.py:269
+msgid "Dokumente"
+msgstr ""
+
+#: core/paper_forms.py:41
+#, fuzzy
+msgid "studies"
+msgstr "Studien"
+
+#: core/paper_forms.py:42
+msgid "Results and conclusions"
+msgstr "Ergebnisse und Schlussfolgerungen"
+
+#: core/paper_forms.py:46
+msgid "Has the study started?"
+msgstr "Wurde die Studie begonnen?"
+
+#: core/paper_forms.py:47
+msgid "Number of recruited patients / subjects"
+msgstr "Zahl der rekrutierten Patient/inn/en / Proband/inn/en"
+
+#: core/paper_forms.py:48
+msgid "Number of patients / subjects who completed the study"
+msgstr "Zahl der Patient/inn/en / Proband/inn/en, die die Studie beendet haben"
+
+#: core/paper_forms.py:49
+msgid "Number of study discontinuations"
+msgstr "Zahl der Studienabbrüche"
+
+#: core/paper_forms.py:50
+msgid "Number of SAEs"
+msgstr "Zahl der SAEs"
+
+#: core/paper_forms.py:51
+msgid "Number of SASARs"
+msgstr "Zahl der SASARs"
+
+#: core/paper_forms.py:55
+msgid "The study was aborted"
+msgstr "Die Studie wurde abgebrochen"
+
+#: core/paper_forms.py:56
+msgid "Date of completion"
+msgstr "Datum der Beendigung"
+
+#: core/paper_forms.py:60
+msgid "Estimated end date"
+msgstr "Voraussichtliches Enddatum"
+
+#: core/paper_forms.py:61
+msgid "I apply for an extension of the validity of the vote"
+msgstr "Ich beantrage die Verlängerung der Gültigkeit des Votums."
+
+#: core/paper_forms.py:65
+msgid "file"
+msgstr "Datei"
+
+#: core/paper_forms.py:66
+msgid "file name"
+msgstr "Dateiname"
+
+#: core/paper_forms.py:67
+msgid "version"
+msgstr "Version"
+
+#: core/paper_forms.py:68
+msgid "date"
+msgstr "Datum"
+
+#: core/paper_forms.py:69 core/paper_forms.py:80
+msgid "type"
+msgstr "Typ"
+
+#: core/paper_forms.py:70
+msgid "replace document"
+msgstr "Ersetze Dokument"
+
+#: core/paper_forms.py:74 core/paper_forms.py:102 core/paper_forms.py:113
+msgid "name"
+msgstr "Name"
+
+#: core/paper_forms.py:75
+msgid "investigator"
+msgstr "Prüfarzt"
+
+#: core/paper_forms.py:79
+msgid "study reference"
+msgstr "Studienbezug"
+
+#: core/paper_forms.py:81
+msgid "number/dose"
+msgstr "Anzahl/Dosis"
+
+#: core/paper_forms.py:82 core/paper_forms.py:173
+msgid "period"
+msgstr "Zeitraum"
+
+#: core/paper_forms.py:83
+msgid "total"
+msgstr "Insgesamt"
+
+#: core/paper_forms.py:87
+msgid "Generic Name"
+msgstr "Generic Name"
+
+#: core/paper_forms.py:88
+msgid "dosage Form"
+msgstr "Darreichungsform"
+
+#: core/paper_forms.py:89
+msgid "dosage"
+msgstr "Dosis"
+
+#: core/paper_forms.py:95
+msgid "project title"
+msgstr "Projekttitel"
+
+#: core/paper_forms.py:95 core/tests/submissions.py:354
+#: core/tests/submissions.py:355
+msgid "project title (english)"
+msgstr "Projekttitel (englisch)"
+
+#: core/paper_forms.py:96
+msgid "protocol number/-name"
+msgstr "Protokollnummer/-bezeichnung"
+
+#: core/paper_forms.py:97
+msgid "date of protocol"
+msgstr "Datum des Protokolls"
+
+#: core/paper_forms.py:98
+msgid "EudraCT-Nr."
+msgstr "EudraCT-Nr."
+
+#: core/paper_forms.py:99
+msgid "ISRCTN-Nr."
+msgstr "ISRCTN-Nr."
+
+#: core/paper_forms.py:100
+msgid "external reviewer suggestions"
+msgstr "Vorschläge für Externe Gutachter"
+
+#: core/paper_forms.py:100
+msgid ""
+"Not necessary for graduate work or retrospective or non-interventional "
+"studies"
+msgstr ""
+"Nicht notwendig für Diplomarbeiten oder retrospektive bzw. nicht "
+"interventionelle Studien"
+
+#: core/paper_forms.py:103 core/paper_forms.py:114
+msgid "sex of contact person"
+msgstr "Anrede der Kontaktperson"
+
+#: core/paper_forms.py:104 core/paper_forms.py:115
+msgid "title of contact person"
+msgstr "Titel der Kontaktperson"
+
+#: core/paper_forms.py:105 core/paper_forms.py:116
+msgid "first name of contact person"
+msgstr "Vorname der Kontaktperson"
+
+#: core/paper_forms.py:106 core/paper_forms.py:117
+msgid "last name of contact person"
+msgstr "Nachname der Kontaktperson"
+
+#: core/paper_forms.py:107 core/paper_forms.py:118 core/paper_forms.py:190
+msgid "address"
+msgstr "Adresse"
+
+#: core/paper_forms.py:108 core/paper_forms.py:119
+msgid "postal code"
+msgstr "Postleitzahl"
+
+#: core/paper_forms.py:109 core/paper_forms.py:120
+msgid "city"
+msgstr "Stadt"
+
+#: core/paper_forms.py:110 core/paper_forms.py:121
+msgid "telephone"
+msgstr "Telefon"
+
+#: core/paper_forms.py:111 core/paper_forms.py:122
+msgid "fax"
+msgstr "FAX"
+
+#: core/paper_forms.py:112 core/paper_forms.py:123 core/paper_forms.py:271
+#: core/paper_forms.py:295
+msgid "e-mail"
+msgstr ""
+
+#: core/paper_forms.py:124
+msgid "UID-Nummer"
+msgstr "UID-Nummer"
+
+#: core/paper_forms.py:125
+msgid "VAT Nr verified (level1)"
+msgstr "MWST Nr verifiziert (Stufe1)"
+
+#: core/paper_forms.py:126
+msgid "VAT Nr verified (level2)"
+msgstr "MWST Nr verifiziert (Stufe2)"
+
+#: core/paper_forms.py:129
+msgid "Clinical trial of an unregistered drug"
+msgstr "Klinische Prüfung eines nicht registrierten Arzneimittels"
+
+#: core/paper_forms.py:130
+msgid "Clinical testing of a registered product"
+msgstr "Klinische Prüfung eines registrierten Arzneimittels"
+
+#: core/paper_forms.py:131
+msgid "according to the indication"
+msgstr "gemäß der Indikation"
+
+#: core/paper_forms.py:132
+msgid "not according to the indication"
+msgstr "nicht gemäß der Indikation"
+
+#: core/paper_forms.py:133
+msgid "Clinical testing of a new medical method"
+msgstr "Klinische Prüfung einer neuen medizinischen Methode"
+
+#: core/paper_forms.py:134
+msgid "Clinical investigation of medical devices"
+msgstr "Klinische Prüfung eines Medizinproduktes"
+
+#: core/paper_forms.py:135
+msgid "with CE-marking"
+msgstr "mit CE-Kennzeichnung"
+
+#: core/paper_forms.py:136
+msgid "without CE-marking"
+msgstr "ohne CE-Kennzeichnung"
+
+#: core/paper_forms.py:137
+msgid "Performance evaluation (in-vitro diagnostics)"
+msgstr "Leistungsbewertungsprüfung (In-vitro-Diagnostika)"
+
+#: core/paper_forms.py:138
+msgid ""
+"Non-therapeutic biomedical research involving human subjects (basic research)"
+msgstr ""
+"Nicht-therapeutische biomedizinische Forschung am Menschen "
+"(Grundlagenforschung)"
+
+#: core/paper_forms.py:139
+msgid "Genetic survey"
+msgstr "Genetische Untersuchung"
+
+#: core/paper_forms.py:140
+msgid "Other, please specify"
+msgstr "Sonstiges, bitte spezifizieren"
+
+#: core/paper_forms.py:140
+msgid "e.g. Dietetics, epidemiology, etc."
+msgstr "z.B. Diätetik, Epidemiologie, etc."
+
+#: core/paper_forms.py:141
+msgid "Dissertation / Thesis"
+msgstr "Dissertation / Diplomarbeit"
+
+#: core/paper_forms.py:142
+msgid "Register"
+msgstr ""
+
+#: core/paper_forms.py:143
+msgid "Biobank"
+msgstr ""
+
+#: core/paper_forms.py:144
+msgid "Retrospective data analysis"
+msgstr "Retrospektive Datenauswertung"
+
+#: core/paper_forms.py:145
+msgid "Questionnaire investigation"
+msgstr "Fragebogen Untersuchung"
+
+#: core/paper_forms.py:146
+msgid "Psychological study"
+msgstr "Psychologische Studie"
+
+#: core/paper_forms.py:147
+msgid "special field"
+msgstr "Fachgebiet"
+
+#: core/paper_forms.py:149
+msgid "Test substances"
+msgstr "Prüfsubstanz(en)"
+
+#: core/paper_forms.py:150
+msgid "Reference substance"
+msgstr "Referenzsubstanz"
+
+#: core/paper_forms.py:152
+msgid "Test products(e)"
+msgstr "Prüfprodukt(e)"
+
+#: core/paper_forms.py:153
+msgid "reference product"
+msgstr "Referenzprodukt"
+
+#: core/paper_forms.py:154
+msgid "Clinical Phase"
+msgstr "Klinische Phase"
+
+#: core/paper_forms.py:154
+msgid ""
+"necessarily indicate, in case of medical devices the most appropriate phase"
+msgstr ""
+"unbedingt angeben, bei Medizinprodukten die am ehesten zutreffende Phase"
+
+#: core/paper_forms.py:155
+msgid "There are already votes of other ethics commissions."
+msgstr "Es liegen bereits Voten anderer Ethikkommissionen vor."
+
+#: core/paper_forms.py:155
+msgid "If so, upload the votes on the documents tab"
+msgstr "Falls ja, laden sie die Voten über den Reiter Unterlagen hoch"
+
+#: core/paper_forms.py:156
+msgid "Planned number of trial participants total"
+msgstr "Geplante Anzahl der Prüfungsteilnehmer/innen gesamt"
+
+#: core/paper_forms.py:156
+msgid "all participating centers"
+msgstr "alle teilnehmenden Zentren"
+
+#: core/paper_forms.py:158
+msgid "minimum age"
+msgstr "Mindestalter"
+
+#: core/paper_forms.py:159
+msgid "maximum age"
+msgstr "Höchstalter"
+
+#: core/paper_forms.py:160
+msgid "Are also non competent includable?"
+msgstr "Sind auch nicht persönlich Einwilligungsfähige einschließbar?"
+
+#: core/paper_forms.py:161
+msgid "male"
+msgstr "männliche"
+
+#: core/paper_forms.py:162
+msgid "female"
+msgstr "weibliche"
+
+#: core/paper_forms.py:163
+msgid "Are women of childbearing age includable?"
+msgstr "Sind gebärfähige Frauen einschließbar?"
+
+#: core/paper_forms.py:164
+msgid ""
+"Duration of participation of the individual test participants in the study"
+msgstr ""
+"Dauer der Teilnahme der einzelnen Prüfungsteilnehmer/innen an der Studie"
+
+#: core/paper_forms.py:165
+msgid "active phase"
+msgstr "Aktive Phase"
+
+#: core/paper_forms.py:166
+msgid "Follow-up inspections"
+msgstr "Nachkontrollen"
+
+#: core/paper_forms.py:167
+msgid "Expected total duration of the study"
+msgstr "Voraussichtliche Gesamtdauer der Studie"
+
+#: core/paper_forms.py:169
+msgid "Registration in other states?"
+msgstr "Registrierung in anderen Staaten?"
+
+#: core/paper_forms.py:170
+msgid "Are there already results of clinical trials for the tested drug?"
+msgstr ""
+"Liegen über das zu prüfende Arzneimittel bereits aussagekräftige Ergebnisse "
+"von klinischen Prüfungen vor?"
+
+#: core/paper_forms.py:171
+msgid "3.2.1 Countries in which the tests were conducted"
+msgstr "3.2.1 In welchen Staaten wurden die Prüfungen durchgeführt?"
+
+#: core/paper_forms.py:172
+msgid "Phase"
+msgstr "Phase"
+
+#: core/paper_forms.py:172
+msgid "If studies are cited in several phases, indicate the highest stage."
+msgstr ""
+"Wenn Studien in mehreren Phasen angeführt sind, die höchste Phase angeben"
+
+#: core/paper_forms.py:174
+msgid "application type(s)"
+msgstr "Anwendungsart(en)"
+
+#: core/paper_forms.py:175
+msgid "Were the clinical tests made according to GCP guidelines"
+msgstr ""
+"Wurde(n), die klinische(n) Prüfung(en) gemäß GCP-Richtlinien durchgeführt?"
+
+#: core/paper_forms.py:176
+msgid "Does a final report exist?"
+msgstr "Liegt ein Abschlußbericht vor?"
+
+#: core/paper_forms.py:176
+msgid ""
+"If yes, upload the investigator's brochure, relevant data or a report of the "
+"Pharmaceutical Advisory Council using the upload tab"
+msgstr ""
+"Falls ja, laden Sie die Investigator's Brochure, relevante Daten oder ein "
+"Gutachten des Arzneimittelbeirates über den Reiter Unterlagen hoch"
+
+#: core/paper_forms.py:177
+msgid "Submit as"
+msgstr "Einreichen als"
+
+#: core/paper_forms.py:179
+msgid "Name of the product"
+msgstr "Bezeichnung des Produktes"
+
+#: core/paper_forms.py:180
+msgid "Manufacturer"
+msgstr "Hersteller"
+
+#: core/paper_forms.py:181
+msgid "Certified for this indication"
+msgstr "Zertifiziert für diese Indikation"
+
+#: core/paper_forms.py:182
+msgid "Certified, but for another indication"
+msgstr "Zertifiziert, aber für eine andere Indikation"
+
+#: core/paper_forms.py:183
+msgid "The medical product carries a CE mark"
+msgstr "Das Medizinprodukt trägt ein CE-Zeichen"
+
+#: core/paper_forms.py:184
+msgid "The product brochure is included."
+msgstr "Die Produktbroschüre liegt bei."
+
+#: core/paper_forms.py:185
+msgid ""
+"What rules or standards have been used for the construction and testing of "
+"the medical product (technical safety)"
+msgstr ""
+"Welche Bestimmungen bzw. Normen sind für die Konstruktion und Prüfung des "
+"Medizinproduktes herangezogen worden (Technische Sicherheit)"
+
+#: core/paper_forms.py:186
+msgid "Any deviations from the above provisions (standards)"
+msgstr "Allfällige Abweichungen von den o.a. Bestimmungen (Normen)"
+
+#: core/paper_forms.py:189
+msgid "insurance company"
+msgstr "Versicherungsgesellschaft"
+
+#: core/paper_forms.py:191 core/paper_forms.py:292
+msgid "phone"
+msgstr "Telefon"
+
+#: core/paper_forms.py:192
+msgid "policy number"
+msgstr "Polizzennummer"
+
+#: core/paper_forms.py:193
+msgid "validity"
+msgstr "Gültigkeitsdauer"
+
+#: core/paper_forms.py:195
+msgid ""
+"Additional information on study-related activities and any necessary "
+"deviations from the routine treatment"
+msgstr ""
+"Ergänzende Informationen zu studienbezogenen Maßnahmen und alle "
+"erforderlichen Abweichungen von der Routinebehandlung"
+
+#: core/paper_forms.py:197
+msgid ""
+"If original project title is not in German: German translation of the title"
+msgstr ""
+"Wenn Original-Projekttitel nicht in Deutsch: Deutsche Übersetzung des Titels"
+
+#: core/paper_forms.py:197
+msgid "project title (kraut-speak)"
+msgstr "Projekttitel (deutsch)"
+
+#: core/paper_forms.py:198
+msgid "project summary"
+msgstr "Zusammenfassung des Projektes"
+
+#: core/paper_forms.py:198
+msgid "Justification, relevance, design, measures and procedure"
+msgstr "Rechtfertigung, Relevanz, Design, Maßnahmen und Vorgehensweise"
+
+#: core/paper_forms.py:199
+msgid ""
+"Results of pre-clinical tests or justification for the waiving of pre-"
+"clinical tests"
+msgstr ""
+"Ergebnisse der prä-klinischen Tests oder Begründung für den Verzicht auf prä-"
+"klinischen Tests"
+
+#: core/paper_forms.py:200
+msgid "Primary hypothesis of the study"
+msgstr "Primäre Hypothese der Studie"
+
+#: core/paper_forms.py:200
+msgid "if relevant, secondary hypotheses"
+msgstr "wenn relevant auch sekundäre Hypothesen"
+
+#: core/paper_forms.py:201
+msgid "Relevant in- and exclusion criteria"
+msgstr "Relevante Ein- und Ausschlusskriterien"
+
+#: core/paper_forms.py:202
+msgid "ethical considerations"
+msgstr "Ethische Überlegungen"
+
+#: core/paper_forms.py:202
+msgid ""
+"Identify and describe all possible problems. Describe the possible gain in "
+"knowledge that is to be achieved through the study and its significance, and "
+"possible risks of harm or burdens to the test participants. Add your own "
+"assessment of the benefit / risk ratio."
+msgstr ""
+"Identifizieren und beschreiben Sie alle möglicherweise auftretenden "
+"Probleme. Beschreiben Sie den mög lichen Wissenszuwachs, der durch die "
+"Studie erzielt werden soll und seine Bedeutung, sowie mögliche Risi­ken für "
+"Schädigungen oderBelastungen der Prüfungsteilnehmer/innen. Legen Sie Ihre "
+"eigene Bewertung des Nutzen/Risiko-Verhältnisses dar"
+
+#: core/paper_forms.py:203
+msgid "Justification for the inclusion of persons from protected groups"
+msgstr "Begründung für den Einschluss von Personen aus geschützten Gruppen"
+
+#: core/paper_forms.py:203
+msgid "e.g. Minor, temporary or permanent non-competent person, if applicable"
+msgstr ""
+"z.B. Minderjährige, temporär oder permanent nicht-einwilligungsfähige "
+"Personen; wenn zutreffend"
+
+#: core/paper_forms.py:204
+msgid "Description of the recruitment process"
+msgstr "Beschreibung des Rekrutierungsverfahrens"
+
+#: core/paper_forms.py:204
+msgid ""
+"All material to be used, for example Listings including layout must be "
+"enclosed"
+msgstr ""
+"alle zur Verwendung bestimmte Materialien, z.B. Inserate inkl. Layout müssen "
+"beigelegt werden"
+
+#: core/paper_forms.py:205
+msgid ""
+"Approach at test center(s), for informing and  obtaining an informed consent "
+"of candidates, or parents or legal representatives, if applicable"
+msgstr ""
+"Vorgehensweise an der/den Prüfstelle(n), zur Information und Erlangung der "
+"informierten Einwil ligung von Prüfungsteilnehmer/inne/n, bzw. Eltern oder "
+"gesetzlichen Vertreter/inne/n, wenn zu-treffend"
+
+#: core/paper_forms.py:205
+msgid ""
+"who will inform and when, need for legal representation, witnesses, etc."
+msgstr ""
+"wer wird informieren und wann, Erfordernis für gesetzliche Vertretung, "
+"Zeugen, etc."
+
+#: core/paper_forms.py:206
+msgid ""
+"Risk assessment, foreseeable risks of treatment and procedures to be used"
+msgstr ""
+"Risikoabschätzung, vorhersehbare Risiken der Behandlung und sonstiger "
+"Verfahren, die verwendet werden sollen"
+
+#: core/paper_forms.py:206
+msgid ""
+"including pain, discomfort, invasion of personal integrity and measures to "
+"prevent and / or supply of unexpected / undesirable events"
+msgstr ""
+"inkl. Schmerzen, Unannehmlichkeiten, Verletzung der persönlichen Integrität "
+"und Maßnah men zur Vermeidung und/oder Versorgung von unvorhergesehenen / "
+"unerwünschten Ereignissen"
+
+#: core/paper_forms.py:207
+msgid "Expected benefits for the included test participants"
+msgstr ""
+"Voraussichtliche Vorteile für die eingeschlossenen Prüfungsteilnehmer/innen"
+
+#: core/paper_forms.py:208
+msgid "Relation between subject and investigator"
+msgstr "Relation zwischen Prüfungsteilnehmer/in und Prüfer/in"
+
+#: core/paper_forms.py:208
+msgid "e.g. Patient - doctor, student - teacher, employee - employer, etc."
+msgstr ""
+"z.B. Patient/in - Ärztin/Arzt, Student/in - Lehrer/in, Dienstnehmer/in - "
+"Dienstgeber/in, etc."
+
+#: core/paper_forms.py:209
+msgid ""
+"Procedures on the site, to determine whether a person at a time to be "
+"included in another study, participate or whether a required period of time "
+"has elapsed since a participation in another study"
+msgstr ""
+"Verfahren an der/den Prüfstelle(n), zur Feststellung, ob eine "
+"einzuschließende Person gleichzeitig an einer anderen Studie teilnimmt oder "
+"ob eine erforderliche Zeitspanne seit einer Teilnahme an einer anderen "
+"Studie verstrichen ist"
+
+#: core/paper_forms.py:209
+msgid ""
+"Of particular importance when healthy volunteers are included in "
+"pharmacological studies."
+msgstr ""
+"von besonderer Bedeutung, wenn gesunde Proband/inn/en in pharmakologische "
+"Studien eingeschlossen werden"
+
+#: core/paper_forms.py:210
+msgid "Methods to identify, record, and report undesirable effects"
+msgstr ""
+"Methoden, um unerwünschte Effekte ausfindig zu machen, sie aufzuzeichnen und "
+"zu berichten"
+
+#: core/paper_forms.py:210
+msgid ""
+"Describe when, by whom and how, for example \"free\" interviews and/or "
+"interviews using lists"
+msgstr ""
+"Beschreiben Sie wann, von wem und wie, z.B. freies Befragen und/oder an Hand "
+"von Listen"
+
+#: core/paper_forms.py:211
+msgid ""
+"Statistical considerations and reasons for the number of people who should "
+"be included in the study"
+msgstr ""
+"Statistische Überlegungen und Gründe für die Anzahl der Personen, die in die "
+"Studie eingeschlossen werden sollen"
+
+#: core/paper_forms.py:211 core/paper_forms.py:212
+msgid "additional information on section 8, if necessary"
+msgstr "ergänzende Informationen zu Punkt 8, wenn erforderlich"
+
+#: core/paper_forms.py:212
+msgid ""
+"Methods used to protect the confidentiality of the data collected, the "
+"source documents and the samples"
+msgstr ""
+"Verwendete Verfahren zum Schutz der Vertraulichkeit der erhobenen Daten, der "
+"Quell dokumente und von Proben"
+
+#: core/paper_forms.py:213
+msgid ""
+"Plan for treatment or care after the person has completed their "
+"participation in the study"
+msgstr ""
+"Plan zur Behandlung oder Versorgung nachdem die Personen ihre Teilnahme an "
+"der Studie beendet haben"
+
+#: core/paper_forms.py:213
+msgid "who will be responsible and where"
+msgstr "wer wird verantwortlich sein und wo"
+
+#: core/paper_forms.py:214
+msgid ""
+"Amount and method of compensation or remuneration to the test participants"
+msgstr ""
+"Betrag und Verfahren der Entschädigung oder Vergütung an die "
+"Prüfungsteilnehmer/innen"
+
+#: core/paper_forms.py:214
+msgid ""
+"Description of the amount to be paid during the exam take and what, for "
+"example, Travel expenses, lost income, pain and discomfort, etc."
+msgstr ""
+"Beschreibung des Betrages, der während der Prüfungsteilnahme bezahlt wird "
+"und wofür, z.B. Fahrtspesen, Einkommensverlust, Schmerzen und "
+"Unannehmlichkeiten, etc."
+
+#: core/paper_forms.py:215
+msgid ""
+"Rules for the suspension or premature termination of the study at the test "
+"center, at the Member State or the entire study"
+msgstr ""
+"Regeln für das Aussetzen oder vorzeitige Beenden der Studie an der/den "
+"Prüfstelle(n), in diesem Mitgliedstaat oder der gesamten Studie"
+
+#: core/paper_forms.py:216
+msgid ""
+"Agreement on access of the examiner(s) to data, publication guidelines, etc"
+msgstr ""
+"Vereinbarung über den Zugriff der Prüferin/des Prüfers/der Prüfer auf Daten, "
+"Publikationsricht linien, etc."
+
+#: core/paper_forms.py:216 core/paper_forms.py:217
+msgid "if not included in the protocol"
+msgstr "wenn nicht im Protokoll dargestellt"
+
+#: core/paper_forms.py:217
+msgid ""
+"Financing of the study and information on financial or other interests of "
+"the examiner"
+msgstr ""
+"Finanzierung der Studie und Informationen über finanzielle oder andere "
+"Interessen der Prüferin/des Prüfers/der Prüfer"
+
+#: core/paper_forms.py:218
+#, fuzzy
+msgid "additional information"
+msgstr "Weitere Informationen"
+
+#: core/paper_forms.py:218
+msgid "if necessary"
+msgstr "wenn erforderlich"
+
+#: core/paper_forms.py:221
+msgid "open / blind / double-blind"
+msgstr "Offen / blind / doppelblind"
+
+#: core/paper_forms.py:222 core/models/submissions.py:383
+msgid "open"
+msgstr "offen"
+
+#: core/paper_forms.py:223
+msgid "randomized"
+msgstr "randomisiert"
+
+#: core/paper_forms.py:224
+msgid "parallel groups"
+msgstr "Parallelgruppen"
+
+#: core/paper_forms.py:225 core/models/submissions.py:210
+msgid "monocentric"
+msgstr "monozentrisch"
+
+#: core/paper_forms.py:226 core/models/submissions.py:383
+msgid "blind"
+msgstr "blind"
+
+#: core/paper_forms.py:227
+msgid "controlled"
+msgstr "kontrolliert"
+
+#: core/paper_forms.py:228
+msgid "cross-over"
+msgstr "cross-over"
+
+#: core/paper_forms.py:229
+msgid "multicentric"
+msgstr "multizentrisch"
+
+#: core/paper_forms.py:230 core/models/submissions.py:383
+msgid "double-blind"
+msgstr "doppelblind"
+
+#: core/paper_forms.py:231
+msgid "placebo"
+msgstr "Placebo"
+
+#: core/paper_forms.py:232
+msgid "factorized"
+msgstr "faktoriell"
+
+#: core/paper_forms.py:233
+msgid "pilot project"
+msgstr "Pilotprojekt"
+
+#: core/paper_forms.py:234
+msgid "observer-blinded"
+msgstr "observer-blinded"
+
+#: core/paper_forms.py:235
+msgid "equivalence testing"
+msgstr "Äquivalenzprüfung"
+
+#: core/paper_forms.py:236
+msgid "misc"
+msgstr "Sonstiges"
+
+#: core/paper_forms.py:237
+msgid "number of groups"
+msgstr "Anzahl der Gruppen"
+
+#: core/paper_forms.py:238
+msgid "stratification"
+msgstr "Stratifizierung"
+
+#: core/paper_forms.py:239
+msgid "sample frequency"
+msgstr "Messwiederholungen"
+
+#: core/paper_forms.py:240
+msgid "primary objectives"
+msgstr "Hauptzielgröße"
+
+#: core/paper_forms.py:241
+msgid "null hypothesis"
+msgstr "Nullhypothese(n)"
+
+#: core/paper_forms.py:242
+msgid "alternative hypothesis"
+msgstr "Alternativhypothese(n)"
+
+#: core/paper_forms.py:243
+msgid "secondary objectives"
+msgstr "Nebenzielgrößen"
+
+#: core/paper_forms.py:246
+msgid "Alpha"
+msgstr "Alpha"
+
+#: core/paper_forms.py:246
+msgid "first order error"
+msgstr "Fehler 1. Art"
+
+#: core/paper_forms.py:247
+msgid "Power"
+msgstr "Power"
+
+#: core/paper_forms.py:247
+msgid "1 - Beta = 1 - second order error"
+msgstr "1 - Beta = 1 - Fehler 2. Art"
+
+#: core/paper_forms.py:248
+msgid "statistical algorithm"
+msgstr "Stat.Verfahren"
+
+#: core/paper_forms.py:249
+msgid "multiple Testing, correctionalgorithm"
+msgstr "Multiples Testen, Korrekturverfahren"
+
+#: core/paper_forms.py:250
+msgid "Expected number of study dropouts(Drop-out-Quota)"
+msgstr "Erwartete Anzahl von Studienabbrecher/inne/n (Drop-out-Quote)"
+
+#: core/paper_forms.py:252
+msgid "Intention-to-treat"
+msgstr "Intention-to-treat"
+
+#: core/paper_forms.py:253
+#, fuzzy
+msgid "Per Protocol"
+msgstr "Per Protocol"
+
+#: core/paper_forms.py:254
+msgid "Interim evaluation, termination criteria"
+msgstr "Zwischenauswertung, Abbruchkriterien"
+
+#: core/paper_forms.py:255
+msgid "Planned use of statistical methods"
+msgstr "Geplante statistische Verfahren"
+
+#: core/paper_forms.py:257
+msgid "Information on the data quality audit"
+msgstr "Angaben zur Datenqualitätsprüfung"
+
+#: core/paper_forms.py:258
+msgid "Information on data management"
+msgstr "Angaben zum Datenmanagement"
+
+#: core/paper_forms.py:260
+msgid "Who did the biometric planning (if applicable, proof of qualification)?"
+msgstr ""
+"Wer führte die biometrische Planung durch (ggf. Nachweis der Qualifikation)?"
+
+#: core/paper_forms.py:261
+msgid ""
+"Who will conduct the statistical analysis (if applicable, proof of "
+"qualification)?"
+msgstr ""
+"Wer wird die statistische Auswertung durchführen (ggf. Nachweis der "
+"Qualifikation)?"
+
+#: core/paper_forms.py:263
+msgid "Justification"
+msgstr "Begründung"
+
+#: core/paper_forms.py:264
+msgid "DPR-Nr."
+msgstr "DVR-Nummer"
+
+#: core/paper_forms.py:265
+msgid "How is the anonymization done?"
+msgstr "Wie erfolgt die Anonymisierung?"
+
+#: core/paper_forms.py:267
+msgid "salutation"
+msgstr "Anrede"
+
+#: core/paper_forms.py:268 core/paper_forms.py:305 meetings/forms.py:15
+#: meetings/forms.py:33
+msgid "title"
+msgstr "Titel"
+
+#: core/paper_forms.py:269 core/paper_forms.py:306
+msgid "first name"
+msgstr "Vorname"
+
+#: core/paper_forms.py:270 core/paper_forms.py:307
+msgid "last name"
+msgstr "Nachname"
+
+#: core/paper_forms.py:273
+msgid "Institution / Company"
+msgstr "Institution/ Firma"
+
+#: core/paper_forms.py:274
+#, fuzzy
+msgid "position"
+msgstr "Position"
+
+#: core/paper_forms.py:276
+msgid "coordinating examiner (multicentric study)"
+msgstr "koordinierende/r Prüfer/in (multizentrische Studie)"
+
+#: core/paper_forms.py:277
+msgid "Principal investigator (monocentric study)"
+msgstr "Hauptprüfer/in (monozentrische Studie)"
+
+#: core/paper_forms.py:278
+msgid "sponsor / representative of the sponsor"
+msgstr "Sponsor bzw. Vertreter/in des Sponsors"
+
+#: core/paper_forms.py:279
+msgid "person/organization authorized by the sponsor"
+msgstr "vom Sponsor autorisierte Person/Organisation"
+
+#: core/paper_forms.py:280
+msgid "The sponsor agrees with the publication."
+msgstr "Der Sponsor stimmt der Veröffentlichung zu."
+
+#: core/paper_forms.py:285
+msgid "study site"
+msgstr "Prüfzentrum"
+
+#: core/paper_forms.py:286
+msgid "ethics commission"
+msgstr "Ethik-Kommission"
+
+#: core/paper_forms.py:287
+msgid "principal investigator"
+msgstr "Hauptprüfer"
+
+#: core/paper_forms.py:288
+msgid "salutation of the Investigator"
+msgstr "Anrede des Prüfarztes"
+
+#: core/paper_forms.py:289
+msgid "title of the Investigator"
+msgstr "Titel des Prüfarztes"
+
+#: core/paper_forms.py:290
+msgid "first name of the Investigator"
+msgstr "Vorname des Prüfarztes"
+
+#: core/paper_forms.py:291
+msgid "last name of the Investigator"
+msgstr "Nachname des Prüfarztes"
+
+#: core/paper_forms.py:293
+msgid "mobile"
+msgstr "\"Pieps\"/Mobil"
+
+#: core/paper_forms.py:294
+msgid "FAX"
+msgstr "FAX"
+
+#: core/paper_forms.py:296 documents/bootstrap.py:15 documents/bootstrap.py:17
+#: documents/bootstrap.py:21
+msgid " "
+msgstr ""
+
+#: core/paper_forms.py:297
+msgid "specialist for"
+msgstr "Facharzt für"
+
+#: core/paper_forms.py:298
+msgid "certified"
+msgstr "Prüfärztekurs"
+
+#: core/paper_forms.py:300
+msgid "number of participants"
+msgstr "Anzahl Teilnehmer/innen"
+
+#: core/paper_forms.py:304
+msgid "Ms/Mr"
+msgstr "Fr/Hr"
+
+#: core/paper_forms.py:308
+msgid "Institution"
+msgstr "Institution"
+
+#: core/paper_forms.py:312
+#, fuzzy
+msgid "exemption of fees"
+msgstr "Gebührenbefreiung"
+
+#: core/parties.py:31
+msgid "Sponsor"
+msgstr ""
+
+#: core/parties.py:37
+msgid "Invoice"
+msgstr ""
+
+#: core/parties.py:43
+msgid "Submitter"
+msgstr ""
+
+#: core/parties.py:45
+#, fuzzy
+msgid "Presenter"
+msgstr "Zentren"
+
+#: core/parties.py:57
+msgid "Board Member Review"
+msgstr ""
+
+#: core/parties.py:60
+#, fuzzy
+msgid "Additional Review"
+msgstr "Einstufungs-Review"
+
+#: core/task_queue.py:26
+#, python-format
+msgid ""
+"Das Votum für die Studie <a href=\"#\" onclick=\"window.parent.location."
+"href='%(url)s';\" >EK-Nr. %(ec_number)s</a> vom %(meeting_date)s ist "
+"abgelaufen.\n"
+msgstr ""
+
+#: core/task_queue.py:32 core/task_queue.py:49 core/task_queue.py:62
+#, python-format
+msgid "Ablauf des Votums für die Studie EK-Nr. %s"
+msgstr ""
+
+#: core/task_queue.py:43
+#, python-format
+msgid ""
+"Das Votum für die Studie <a href=\"#\" onclick=\"window.parent.location."
+"href='%(url)s';\" >EK-Nr. %(ec_number)s</a> vom %(meeting_date)s läuft in "
+"drei Wochen ab.\n"
+msgstr ""
+
+#: core/task_queue.py:56
+#, python-format
+msgid ""
+"Das Votum für die Studie <a href=\"#\" onclick=\"window.parent.location."
+"href='%(url)s';\" >EK-Nr. %(ec_number)s</a> vom %(meeting_date)s läuft in "
+"einer Woche ab.\n"
+msgstr ""
+
+#: core/workflow.py:74
+msgid "Acknowledge"
+msgstr "Bestätigen"
+
+#: core/workflow.py:75
+msgid "Reject"
+msgstr "Ablehnen"
+
+#: core/forms/checklist.py:14 core/models/voting.py:30
+msgid "comment"
+msgstr "Kommentar"
+
+#: core/forms/fields.py:16
+msgid "Please enter a date in the format dd.mm.yyyy."
+msgstr "Bitte geben Sie ein Datum im Format TT.MM.JJJJ ein."
+
+#: core/forms/fields.py:23
+msgid "Please enter a date in dd.mm.yyyy format and time in format HH:MM."
+msgstr ""
+"Bitte geben Sie ein Datum im Format TT.MM.JJJJ und eine Uhrzeit im Format HH:"
+"MM ein."
+
+#: core/forms/fields.py:28
+msgid "Please enter a time in the format HH: MM."
+msgstr "Bitte geben Sie eine Uhrzeit im Format HH:MM ein."
+
+#: core/forms/fields.py:33
+msgid "Please enter a valid time period. E.g. \"10min\" or \"1h 30min\""
+msgstr ""
+"Bitte geben Sie eine gültige Zeitspanne an. Z.b. \"10min\" oder \"1h 30min\""
+
+#: core/forms/forms.py:92
+msgid "The account beneficiary is not the sponsor"
+msgstr "Der Rechnungsempfänger ist nicht der Sponsor"
+
+#: core/forms/layout.py:11
+msgid "Key data"
+msgstr "Eckdaten"
+
+#: core/forms/layout.py:12
+msgid "type of project"
+msgstr "Art des Projekts"
+
+#: core/forms/layout.py:20
+msgid "participant"
+msgstr "Teilnehmer"
+
+#: core/forms/layout.py:21
+msgid "test participant"
+msgstr "Prüfungsteilnehmer"
+
+#: core/forms/layout.py:26 core/forms/layout.py:27
+msgid "outline"
+msgstr "Kurzfassung"
+
+#: core/forms/layout.py:36 core/forms/layout.py:37
+msgid "sponsor"
+msgstr "Sponsor"
+
+#: core/forms/layout.py:45
+msgid "invoice recipient"
+msgstr "Rechnungsempfänger"
+
+#: core/forms/layout.py:60 core/forms/layout.py:62
+msgid "AMG"
+msgstr "AMG"
+
+#: core/forms/layout.py:61
+msgid "drug trial"
+msgstr "Arzneimittelstudie"
+
+#: core/forms/layout.py:69 core/forms/layout.py:71
+msgid "MPG"
+msgstr "MPG"
+
+#: core/forms/layout.py:70
+msgid "Medical Device Study"
+msgstr "Medizinproduktestudie"
+
+#: core/forms/layout.py:76 core/forms/layout.py:77
+msgid "measures"
+msgstr "Maßnahmen"
+
+#: core/forms/layout.py:79 core/forms/layout.py:80
+msgid "biometrics"
+msgstr "Biometrie"
+
+#: core/forms/layout.py:91 core/forms/layout.py:92
+msgid "insurance"
+msgstr "Versicherung"
+
+#: core/forms/layout.py:96 core/forms/layout.py:119
+msgid "documents"
+msgstr "Unterlagen"
+
+#: core/forms/layout.py:97
+msgid "centres abroad"
+msgstr "Auslandszentren"
+
+#: core/forms/layout.py:98
+msgid "centers abroad"
+msgstr "Zentren im Ausland"
+
+#: core/forms/layout.py:100
+msgid "centre"
+msgstr "Zentrum"
+
+#: core/forms/layout.py:114 core/forms/layout.py:115
+msgid "General information"
+msgstr "Allgemeine Angaben"
+
+#: core/forms/review.py:29
+msgid "Studies cannot be classified 'expedited' and 'thesis' at the same time."
+msgstr ""
+
+#: core/forms/wizard.py:50
+msgid "Empty Study"
+msgstr ""
+
+#: core/forms/wizard.py:51
+msgid "Thesis"
+msgstr "Diplomarbeit"
+
+#: core/forms/wizard.py:52
+msgid "AMG-Study"
+msgstr "AMG-Studie"
+
+#: core/forms/wizard.py:53
+msgid "MPG-Study"
+msgstr "MPG-Studie"
+
+#: core/forms/wizard.py:54
+msgid "Import Submission"
+msgstr "Einreichung importieren"
+
+#: core/forms/wizard.py:62
+msgid "at Medical University Vienna"
+msgstr ""
+
+#: core/forms/wizard.py:63
+msgid "other University"
+msgstr ""
+
+#: core/models/checklist.py:13
+#, fuzzy
+msgid "optional documents"
+msgstr "Unterlagen"
+
+#: core/models/checklist.py:13
+msgid "one mandatory document"
+msgstr ""
+
+#: core/models/names.py:30 core/models/submissions.py:628 users/forms.py:12
+#: users/models.py:26
+msgid "Ms"
+msgstr "Frau"
+
+#: core/models/names.py:30 core/models/submissions.py:628 users/forms.py:12
+#: users/models.py:26
+msgid "Mr"
+msgstr "Herr"
+
+#: core/models/submissions.py:211
+msgid "multicentric, main ethics commission"
+msgstr "multizentrisch, Leit-Ethikkommission"
+
+#: core/models/submissions.py:212
+msgid "multicentric, local ethics commission"
+msgstr "multizentrisch, lokale Ethikkommision"
+
+#: core/models/submissions.py:659
+msgid "only study-related"
+msgstr "ausschließlich studienbezogen"
+
+#: core/models/submissions.py:659
+msgid "for routine purposes"
+msgstr "zu Routinezwecken"
+
+#: core/models/voting.py:9
+msgid "1 positive"
+msgstr "1 Positiv"
+
+#: core/models/voting.py:10
+msgid "1a positive - with corrections"
+msgstr "1a Positiv - mit Ausbesserungen"
+
+#: core/models/voting.py:11
+msgid "2 positive under reserve"
+msgstr "2 Vorbehaltich positiv"
+
+#: core/models/voting.py:12
+msgid "3 recessed (objections)"
+msgstr "3 Vertagt (Einwände)"
+
+#: core/models/voting.py:13
+msgid "4 negative"
+msgstr "4 Negativ"
+
+#: core/models/voting.py:14
+msgid "5 recessed (applicant)"
+msgstr "5 Vertagt (Antragsteller)"
+
+#: core/models/voting.py:15
+msgid "5a withdrawn (applicant)"
+msgstr "5a Zurückgezogen (Antragsteller)"
+
+#: core/models/voting.py:16
+msgid "5b not examined"
+msgstr "5b Nicht behandelt"
+
+#: core/models/voting.py:28
+msgid "vote"
+msgstr "Votum"
+
+#: core/templatetags/corepdf.py:13
+msgid "yes"
+msgstr "Ja"
+
+#: core/templatetags/corepdf.py:13
+msgid "no"
+msgstr "Nein"
+
+#: core/views/submissions.py:308
+msgid ""
+"You cannot submit studies yet. Please wait until the office has approved "
+"your account."
+msgstr ""
+"Sie koennen noch keine Studien abschicken, da ihr Account noch nicht "
+"bestaetigt wurde "
+
+#: documents/bootstrap.py:12
+msgid "Covering Letter"
+msgstr "Covering Letter"
+
+#: documents/bootstrap.py:12
+msgid "Cover letter / covering letter to the Ethics Commission"
+msgstr "Anschreiben / Begleitschreiben an die Ethikkommission"
+
+#: documents/bootstrap.py:13
+msgid "patient information"
+msgstr "Patienteninformation"
+
+#: documents/bootstrap.py:14
+msgid ""
+"Patients / subjects / children / youths / parents / genetic information, "
+"information for non competent patients"
+msgstr ""
+"Patienten / Probanden / Kinder / Jugendliche / Eltern / Genetische- "
+"Information, Information für nicht einwilligungsfähige Patienten"
+
+#: documents/bootstrap.py:15
+msgid "insurancecertificate"
+msgstr "Versicherungsbestätigung"
+
+#: documents/bootstrap.py:16
+msgid "study protocol"
+msgstr "Studienprotokoll"
+
+#: documents/bootstrap.py:17
+msgid "Investigator's Brochure"
+msgstr ""
+
+#: documents/bootstrap.py:18
+msgid "Amendment"
+msgstr ""
+
+#: documents/bootstrap.py:18
+msgid "Protocol changes"
+msgstr "Protokolländerungen"
+
+#: documents/bootstrap.py:19
+msgid "Curriculum Vitae (CV)"
+msgstr ""
+
+#: documents/bootstrap.py:19
+msgid "CV"
+msgstr "Lebenslauf"
+
+#: documents/bootstrap.py:20
+msgid "Conflict of Interest"
+msgstr ""
+
+#: documents/bootstrap.py:20
+msgid "can also be a Financial Disclosure Form"
+msgstr "kann auch ein Financial Disclosure Form sein"
+
+#: documents/bootstrap.py:21
+msgid "Case Report Form (CRF)"
+msgstr ""
+
+#: documents/bootstrap.py:22
+msgid "EudraCT Form"
+msgstr ""
+
+#: documents/bootstrap.py:22
+msgid ""
+"Request for Authorisation, Notification of Amendment Form, Declaration of "
+"the end of the clinical trial"
+msgstr ""
+
+#: documents/bootstrap.py:23
+msgid "adverse reaction report"
+msgstr ""
+
+#: documents/bootstrap.py:23
+msgid "Med Watch report, CIOMS form etc."
+msgstr "Med Watch-Bericht, CIOMS-Formular etc."
+
+#: documents/bootstrap.py:24
+msgid "other"
+msgstr "Sonstige"
+
+#: documents/bootstrap.py:24
+msgid ""
+"Patient diaries, patient card, technical information, questionnaires, etc."
+msgstr "Patiententagebuch, Patientenkarte, Fachinformation, Fragebögen etc."
+
+#: fastlane/forms.py:14 meetings/forms.py:14
+msgid "date and time"
+msgstr "Datum und Uhrzeit"
+
+#: fastlane/views.py:73
+#, python-format
+msgid ""
+"You have been selected for the Fast Lane Meeting at %(meeting_date)s %"
+"(meeting_title)s\n"
+"as a participant to the submissions: %(submissions)s"
+msgstr ""
+
+#: fastlane/views.py:78
+#, python-format
+msgid ""
+"Your Participation in the Fast Lane Meeting %(meeting_date)s %(meeting_title)"
+"s"
+msgstr ""
+
+#: mediaserver/views.py:17 mediaserver/views.py:33 mediaserver/views.py:51
+msgid "Invalid expiring url"
+msgstr ""
+
+#: mediaserver/views.py:71
+msgid "sorry, unfinished"
+msgstr ""
+
+#: meetings/forms.py:16
+msgid "deadline"
+msgstr "Deadline"
+
+#: meetings/forms.py:17
+msgid "deadline thesis"
+msgstr "Deadline Diplomathesis"
+
+#: meetings/forms.py:34
+msgid "duration"
+msgstr "Dauer"
+
+#: meetings/forms.py:35
+msgid "break"
+msgstr "Pause"
+
+#: meetings/forms.py:36
+msgid "ideal start time (time)"
+msgstr "Ideale Startzeit (Uhrzeit)"
+
+#: meetings/forms.py:45
+msgid "from (time)"
+msgstr "Von (Uhrzeit)"
+
+#: meetings/forms.py:46
+msgid "to (time)"
+msgstr "Bis (Uhrzeit)"
+
+#: meetings/forms.py:47
+msgid "weighting"
+msgstr "Gewichtung"
+
+#: meetings/forms.py:47
+msgid "unfavorable"
+msgstr "ungünstig"
+
+#: meetings/forms.py:47
+msgid "impossible"
+msgstr "unmöglich"
+
+#: meetings/views.py:229
+msgid "This meeting has ended."
+msgstr "Diese Sitzung wurde beendet."
+
+#: meetings/views.py:237
+msgid "No TOPs are assigned to this meeting."
+msgstr "Dieser Sitzung sind keine TOPs zugeordnet."
+
+#: meetings/views.py:242
+msgid "This meeting has not yet started."
+msgstr "Dieses Sitzung wurde noch nicht begonnen."
+
+#: meetings/views.py:254
+msgid "unfinished meetings cannot be stopped"
+msgstr ""
+
+#: meetings/views.py:350 meetings/views.py:425
+msgid "agenda"
+msgstr "Agenda"
+
+#: meetings/views.py:361
+msgid "protocol"
+msgstr "Protokoll"
+
+#: meetings/views.py:413
+msgid "time slot"
+msgstr "Zeitfenster"
+
+#: meetings/views.py:438
+msgid "Invitation to meeting"
+msgstr "Einladung zur Sitzung"
+
+#: notifications/views.py:71
+msgid "autosave successful"
+msgstr ""
+
+#: pdfviewer/models.py:22
+msgid "top"
+msgstr ""
+
+#: pdfviewer/models.py:24
+msgid "middle"
+msgstr ""
+
+#: pdfviewer/models.py:26
+msgid "bottom"
+msgstr ""
+
+#: pdfviewer/views.py:45
+#, python-format
+msgid "invalid data: %s"
+msgstr ""
+
+#: tasks/forms.py:10
+msgid "delegate"
+msgstr ""
+
+#: tasks/forms.py:10
+msgid "message"
+msgstr ""
+
+#: tasks/forms.py:11
+msgid "callback"
+msgstr ""
+
+#: tasks/forms.py:11
+msgid "somebody"
+msgstr ""
+
+#: tasks/forms.py:11
+msgid "related"
+msgstr ""
+
+#: tasks/forms.py:20
+msgid "<group>"
+msgstr "<Gruppe>"
+
+#: tasks/forms.py:34
+msgid "complete"
+msgstr ""
+
+#: tasks/forms.py:56 tasks/forms.py:61 tasks/forms.py:64 tasks/forms.py:67
+msgid "You must select a user."
+msgstr "Sie müssen einen Benutzer auswählen."
+
+#: tasks/forms.py:69
+msgid "You must select a recipient."
+msgstr "Sie müssen einen Adressaten auswählen."
+
+#: tasks/forms.py:85
+msgid "Deadline"
+msgstr ""
+
+#: tasks/forms.py:86
+msgid "Oldest"
+msgstr ""
+
+#: tasks/forms.py:87
+msgid "Newest"
+msgstr ""
+
+#: templates/core.html:32
+msgid "Dashboard"
+msgstr "Übersicht"
+
+#: templates/core.html:33 templates/communication/list.html:6
+#: templates/submissions/readonly_form.html:90
+msgid "Communication"
+msgstr "Nachrichten"
+
+#: templates/core.html:34 templates/tasks/list.html:6
+#, fuzzy
+msgid "Tasks"
+msgstr "Meine Tätigkeiten"
+
+#: templates/core.html:36
+msgid "Studies"
+msgstr "Studien"
+
+#: templates/core.html:39
+msgid "Eingereichte und Neue"
+msgstr ""
+
+#: templates/core.html:41
+msgid "Mir zugeordnete Studien"
+msgstr ""
+
+#: templates/core.html:42
+#, fuzzy
+msgid "Meine Studien"
+msgstr "Studien"
+
+#: templates/core.html:48
+msgid "Study Notifications"
+msgstr "Studien Meldungen"
+
+#: templates/core.html:56
+msgid "Meetings"
+msgstr "Sitzungen"
+
+#: templates/core.html:58
+#, fuzzy
+msgid "Next Meeting"
+msgstr "Sitzungen"
+
+#: templates/core.html:60
+#, fuzzy
+msgid "Upcoming Meetings"
+msgstr "Sitzungen"
+
+#: templates/core.html:61
+#, fuzzy
+msgid "Past Meetings"
+msgstr "Beantwortete Meldungen"
+
+#: templates/core.html:63
+#, fuzzy
+msgid "New Meeting"
+msgstr "Sitzungen"
+
+#: templates/core.html:65
+#, fuzzy
+msgid "Fast Lane Meetings"
+msgstr "Beantwortete Meldungen"
+
+#: templates/core.html:67
+msgid "New Fast Lane Meeting"
+msgstr "Neue Fast Lane Sitzung"
+
+#: templates/core.html:75 templates/administration/detail.html:9
+#: templates/administration/detail.html:18 templates/users/details.html:6
+msgid "Administration"
+msgstr "Verwaltung"
+
+#: templates/core.html:78 templates/administration/detail.html:11
+msgid "User Administration"
+msgstr "Benutzerverwaltung"
+
+#: templates/core.html:83
+msgid "Audit Trail"
+msgstr "Kontrollprotokoll"
+
+#: templates/core.html:89
+msgid "Demo"
+msgstr "Demo"
+
+#: templates/core.html:91 templates/submissions/catalog.html:7
+#: templates/submissions/catalog.html:14
+msgid "Catalog of Approved Studies"
+msgstr "Register der Genehmigten Studien"
+
+#: templates/core.html:96
+msgid "Recent Activities"
+msgstr "Letzte Tätigkeiten"
+
+#: templates/core.html:113
+#, python-format
+msgid ""
+"\n"
+"          You are currently marked indisposed. To reclaim your tasks, please "
+"visit your <a href=\"%(profile_url)s\">profile</a>.\n"
+"      "
+msgstr ""
+
+#: templates/core.html:213
+msgid "Single Login enforced"
+msgstr "Einzelanmeldung erzwungen"
+
+#: templates/core.html:213
+msgid "The old session is now void."
+msgstr "Ihre vorherige Session ist nun ungültig"
+
+#: templates/administration/detail.html:4 templates/users/details.html:4
+msgid "ECS Administration"
+msgstr "ECS Verwaltung"
+
+#: templates/audit/log.html:19
+msgid "Newest Entries"
+msgstr "Neuerste Einträge"
+
+#: templates/audit/log.html:20
+msgid "Newer Entries"
+msgstr "Neuere Einträge"
+
+#: templates/audit/log.html:24
+msgid "Older Entries"
+msgstr "Ältere Einträge"
+
+#: templates/communication/threads.html:7
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: templates/communication/threads.html:11
+msgid "Incoming"
+msgstr "Einkommend"
+
+#: templates/communication/threads.html:12
+msgid "Outgoing"
+msgstr "Ausgehend"
+
+#: templates/communication/threads.html:16
+msgid "New Message"
+msgstr "Neue Nachricht"
+
+#: templates/communication/threads.html:17
+msgid "sort"
+msgstr "sortieren"
+
+#: templates/communication/threads.html:18
+msgid "Person"
+msgstr "Person"
+
+#: templates/communication/threads.html:19
+msgid "Old/New"
+msgstr "Alt/Neu"
+
+#: templates/communication/threads.html:36
+msgid "Von/An"
+msgstr "Von/An"
+
+#: templates/communication/threads.html:41
+msgid "an"
+msgstr "an"
+
+#: templates/communication/threads.html:43
+msgid "von"
+msgstr "von"
+
+#: templates/documents/compact_list.html:15
+msgid "View"
+msgstr ""
+
+#: templates/documents/compact_list.html:17
+msgid "Share Annotations"
+msgstr ""
+
+#: templates/documents/upload_form.html:7
+msgid "Delete"
+msgstr "Löschen"
+
+#: templates/fastlane/assistant.html:8
+msgid "Fast Lane Assistant"
+msgstr ""
+
+#: templates/fastlane/assistant_main.html:7
+msgid "Start Meeting"
+msgstr "Sitzung Starten"
+
+#: templates/fastlane/assistant_main.html:14
+#, python-format
+msgid ""
+"\n"
+"            The meeting started at %(started)s and ended at %(ended)s\n"
+"        "
+msgstr ""
+
+#: templates/fastlane/assistant_main.html:18
+#, python-format
+msgid ""
+"\n"
+"            The meeting is scheduled for %(start)s\n"
+"        "
+msgstr ""
+
+#: templates/fastlane/assistant_recommendation.html:6
+msgid "Stop Meeting"
+msgstr "Sitzung Beenden"
+
+#: templates/fastlane/assistant_recommendation.html:28
+#: templates/submissions/internal_list.html:38
+#: templates/submissions/widget.html:38 templates/users/administration.html:22
+#: templates/users/administration.html:85
+msgid "of"
+msgstr "von"
+
+#: templates/fastlane/assistant_recommendation.html:36
+#, python-format
+msgid ""
+"\n"
+"            The meeting started at %(started)s\n"
+"        "
+msgstr ""
+
+#: templates/fastlane/assistant_recommendation.html:47
+#: templates/submissions/internal_list.html:23
+#: templates/submissions/widget.html:16
+msgid "Categories"
+msgstr "Kategorien"
+
+#: templates/fastlane/assistant_recommendation.html:57
+#: templates/fastlane/participation.html:21 templates/submissions/form.html:11
+#: templates/users/profile_form.html:13
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/fastlane/detail.html:4 templates/fastlane/invitations.html:4
+#: templates/fastlane/list.html:4 templates/fastlane/new.html:4
+#: templates/meetings/detail.html:4 templates/submissions/diff/diff.html:4
+msgid "ECS Elektronische Einreichung"
+msgstr ""
+
+#: templates/fastlane/detail.html:9
+msgid "Fast Lane Meeting"
+msgstr "Fast Lane Sitzung"
+
+#: templates/fastlane/detail.html:11 templates/fastlane/status.html:5
+#: templates/fastlane/status.html.py:11 templates/meetings/detail.html:11
+#: templates/meetings/status.html:5 templates/meetings/status.html.py:11
+#: templates/submissions/readonly_form.html:21
+#: templates/submissions/readonly_form.html:24
+msgid "Status"
+msgstr "Status"
+
+#: templates/fastlane/detail.html:13
+msgid "Participation"
+msgstr "Teilnahme"
+
+#: templates/fastlane/detail.html:14
+msgid "Assistant"
+msgstr "Assistent"
+
+#: templates/fastlane/invitations.html:6
+msgid "Fast Lane Invitations"
+msgstr "Fast Lane Einladungen"
+
+#: templates/fastlane/invitations.html:30
+#: templates/fastlane/participation.html:25
+msgid "Send Invitations"
+msgstr ""
+
+#: templates/fastlane/list.html:6 templates/fastlane/list.html.py:11
+msgid "Fast Lanes"
+msgstr ""
+
+#: templates/fastlane/list.html:18 templates/meetings/list.html:20
+#: templates/submissions/readonly_form.html:152
+msgid "Ansehen"
+msgstr ""
+
+#: templates/fastlane/new.html:6 templates/fastlane/new.html.py:10
+msgid "New Fast Lane"
+msgstr ""
+
+#: templates/fastlane/participation.html:7
+msgid "Fast Lane Participation"
+msgstr ""
+
+#: templates/fastlane/status.html:8 templates/meetings/status.html:8
+msgid "Title"
+msgstr "Titel"
+
+#: templates/fastlane/status.html:9 templates/meetings/status.html:9
+msgid "Scheduled for"
+msgstr ""
+
+#: templates/fastlane/status.html:14 templates/meetings/status.html:14
+msgid "Ended"
+msgstr ""
+
+#: templates/fastlane/status.html:16 templates/meetings/status.html:16
+msgid "Started"
+msgstr "Gestartet"
+
+#: templates/fastlane/status.html:18 templates/meetings/status.html:18
+msgid "New"
+msgstr "Neu"
+
+#: templates/fastlane/status.html:24 templates/meetings/status.html:24
+msgid "Started at"
+msgstr "Gestartet um"
+
+#: templates/fastlane/status.html:27 templates/meetings/status.html:27
+msgid "Ended at"
+msgstr ""
+
+#: templates/fastlane/status.html:30
+msgid "Submissions"
+msgstr "Einreichungen"
+
+#: templates/meetings/detail.html:9
+msgid "Meeting"
+msgstr "Sitzung"
+
+#: templates/meetings/detail.html:13
+msgid "Spezialistenzuordnung"
+msgstr ""
+
+#: templates/meetings/detail.html:14 templates/meetings/status.html:37
+msgid "Timetable"
+msgstr ""
+
+#: templates/meetings/detail.html:17
+msgid "Signatur der Voten"
+msgstr ""
+
+#: templates/meetings/reschedule.html:5
+#, fuzzy
+msgid "Reschedule Submission"
+msgstr "Einreichung"
+
+#: templates/meetings/status.html:30
+msgid "Agenda"
+msgstr ""
+
+#: templates/meetings/status.html:32
+msgid "Agenda PDF"
+msgstr ""
+
+#: templates/meetings/status.html:38
+msgid "Timetable PDF"
+msgstr ""
+
+#: templates/meetings/status.html:41
+msgid "Protocol"
+msgstr ""
+
+#: templates/meetings/status.html:42
+msgid "Protocol PDF"
+msgstr ""
+
+#: templates/meetings/assistant/base.html:16
+msgid "Comments"
+msgstr ""
+
+#: templates/meetings/assistant/top.html:71
+#, fuzzy
+msgid "Expedited Review"
+msgstr "External Reviewer"
+
+#: templates/meetings/assistant/top.html:73
+msgid "copy comment"
+msgstr ""
+
+#: templates/meetings/timetable/editor.html:50
+msgid "before"
+msgstr ""
+
+#: templates/meetings/timetable/editor.html:50
+msgid "waiting"
+msgstr ""
+
+#: templates/meetings/timetable/editor.html:50
+msgid "after"
+msgstr ""
+
+#: templates/notifications/form.html:9
+msgid "New Notification"
+msgstr "Neue Meldungen"
+
+#: templates/pdfviewer/annotations/sharing/share.html:10
+msgid "Share"
+msgstr ""
+
+#: templates/submissions/base_form.html:12
+msgid "Submission"
+msgstr "Einreichung"
+
+#: templates/submissions/base_form.html:201
+msgid "This tab may only be used when 2.1.2 is selected."
+msgstr "Dieses Tab kann nur verwendet werden, wenn 2.1.2 ausgewählt ist."
+
+#: templates/submissions/catalog.html:19
+msgid "Meeting from"
+msgstr "Sitzung vom"
+
+#: templates/submissions/form.html:12
+msgid "Validate"
+msgstr "Validieren"
+
+#: templates/submissions/form.html:15
+msgid "Resubmit"
+msgstr "Neu Einreichen"
+
+#: templates/submissions/form.html:17
+msgid "Submit"
+msgstr "Einreichen"
+
+#: templates/submissions/form.html:61
+msgid "You filled out the form correctly. Do want to submit the study?"
+msgstr ""
+"Sie haben das Formular korrekt ausgefüllt. Wollen Sie die Studie einreichen?"
+
+#: templates/submissions/internal_list.html:28
+#: templates/submissions/widget.html:21
+msgid "ExpeditedReviewCategories"
+msgstr ""
+
+#: templates/submissions/internal_list.html:34
+#: templates/submissions/widget.html:26
+msgid "No Submissions."
+msgstr "Keine Einreichung."
+
+#: templates/submissions/internal_list.html:38
+#: templates/submissions/widget.html:38 templates/users/administration.html:22
+#: templates/users/administration.html:85
+msgid "Page"
+msgstr "Seite"
+
+#: templates/submissions/list.html:16
+msgid "Unsubmitted Studies"
+msgstr "Studien in Bearbeitung (nicht Eingereicht)"
+
+#: templates/submissions/list.html:33
+msgid "Submitted Studies (Unscheduled)"
+msgstr "Eingereichte Studien ohne Sitzungszuordnung"
+
+#: templates/submissions/list.html:42
+#, python-format
+msgid ""
+"\n"
+"            Studies Scheduled for the Meeting at %(start)s (%(title)s)\n"
+"        "
+msgstr ""
+"\n"
+"            Studien für die Sitzung am %(start)s (%(title)s)\n"
+"        "
+
+#: templates/submissions/readonly_form.html:11
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: templates/submissions/readonly_form.html:27
+#: templates/submissions/tabs/workflow.html:2
+msgid "Workflow"
+msgstr ""
+
+#: templates/submissions/readonly_form.html:31
+#: templates/submissions/tabs/workflow_log.html:2
+msgid "Workflow Log"
+msgstr ""
+
+#: templates/submissions/readonly_form.html:35
+#: templates/submissions/tabs/involved_parties.html:2
+msgid "Involved Parties"
+msgstr ""
+
+#: templates/submissions/readonly_form.html:39
+#: templates/submissions/tabs/developer.html:2
+msgid "Developer"
+msgstr "Entwickler"
+
+#: templates/submissions/readonly_form.html:48
+msgid "Review"
+msgstr "Review"
+
+#: templates/submissions/readonly_form.html:51
+#: templates/submissions/tabs/developer.html:9
+msgid "Categorization Review"
+msgstr "Einstufungs-Review"
+
+#: templates/submissions/readonly_form.html:76
+msgid "Votes"
+msgstr "Voten"
+
+#: templates/submissions/readonly_form.html:78
+#: templates/submissions/readonly_form.html:146
+msgid "Pending Votes"
+msgstr "Ausstehende Voten"
+
+#: templates/submissions/readonly_form.html:79
+#: templates/submissions/readonly_form.html:163
+msgid "Published Votes"
+msgstr "Veröffentlichte Voten"
+
+#: templates/submissions/readonly_form.html:83
+msgid "Notifications"
+msgstr "Meldungen"
+
+#: templates/submissions/readonly_form.html:85
+#: templates/submissions/readonly_form.html:120
+msgid "Pending Notifications"
+msgstr "Ausstehende Meldungen"
+
+#: templates/submissions/readonly_form.html:86
+#: templates/submissions/readonly_form.html:133
+msgid "Answered Notifications"
+msgstr "Beantwortete Meldungen"
+
+#: templates/submissions/readonly_form.html:92
+#: templates/submissions/readonly_form.html:222
+msgid "My Communication"
+msgstr "Meine Nachrichten"
+
+#: templates/submissions/readonly_form.html:93
+#: templates/submissions/readonly_form.html:228
+msgid "Communication Overview"
+msgstr "Nachrichten Überblick"
+
+#: templates/submissions/readonly_form.html:128
+msgid "There are no pending notifications."
+msgstr ""
+
+#: templates/submissions/readonly_form.html:130
+#: templates/submissions/readonly_form.html:143
+msgid "Create a new notification"
+msgstr ""
+
+#: templates/submissions/readonly_form.html:141
+msgid "There are no answered notifications."
+msgstr ""
+
+#: templates/submissions/readonly_form.html:154
+msgid "Signieren"
+msgstr ""
+
+#: templates/submissions/readonly_form.html:159
+msgid "There are no pending votes."
+msgstr "Es existieren derzeit keine ausstehenden Voten."
+
+#: templates/submissions/readonly_form.html:168
+msgid "Download"
+msgstr ""
+
+#: templates/submissions/readonly_form.html:172
+msgid "There are no published votes."
+msgstr "Es existieren derzeit keine veröffentlichten Voten."
+
+#: templates/submissions/readonly_form.html:225
+msgid "Write a new message"
+msgstr "Neue Nachricht"
+
+#: templates/submissions/readonly_form.html:294
+msgid "Insert Annotations"
+msgstr "Anmerkungen einfügen"
+
+#: templates/submissions/readonly_form.html:298
+msgid "Copy"
+msgstr "Kopieren"
+
+#: templates/submissions/widget.html:31
+msgid "More"
+msgstr "Mehr"
+
+#: templates/submissions/wizard.html:5
+msgid "ECS Submission Wizard"
+msgstr "ECS Einreichungs-Helfer"
+
+#: templates/submissions/wizard.html:8
+msgid "Submission Wizard"
+msgstr "Einreichungs-Helfer"
+
+#: templates/submissions/wizard.html:14
+msgid "Next"
+msgstr ""
+
+#: templates/submissions/diff/diff.html:12
+msgid "old"
+msgstr "alt"
+
+#: templates/submissions/diff/diff.html:13
+msgid "new"
+msgstr "neu"
+
+#: templates/submissions/diff/diff.html:14
+msgid "all"
+msgstr "alle"
+
+#: templates/submissions/tabs/developer.html:10
+msgid "Thesis Review"
+msgstr "Diplomarbeit Review"
+
+#: templates/submissions/tabs/involved_parties.html:5
+msgid "Involvement"
+msgstr ""
+
+#: templates/submissions/tabs/involved_parties.html:6
+msgid "Name"
+msgstr ""
+
+#: templates/submissions/tabs/involved_parties.html:7
+msgid "Organization"
+msgstr "Organisation"
+
+#: templates/submissions/tabs/involved_parties.html:8
+msgid "E-Mail"
+msgstr ""
+
+#: templates/submissions/tabs/involved_parties.html:21
+#, python-format
+msgid ""
+"\n"
+"                            Send a message to %(user)s\n"
+"                        "
+msgstr ""
+
+#: templates/tasks/manage_task.html:5
+msgid "Show all tasks"
+msgstr "Alle Tätigkeiten anzeigen."
+
+#: templates/tasks/manage_task.html:19
+msgid "Close"
+msgstr "Schliessen"
+
+#: templates/tasks/manage_task.html:31
+msgid "Delegate"
+msgstr "Abgeben"
+
+#: templates/tasks/manage_task.html:41
+msgid "Ask"
+msgstr ""
+
+#: templates/users/administration.html:5
+msgid "List of Users"
+msgstr "Liste der Benutzer"
+
+#: templates/users/administration.html:9
+#: templates/users/administration.html:34
+msgid "Approval"
+msgstr ""
+
+#: templates/users/administration.html:10
+msgid "Group"
+msgstr "Gruppe"
+
+#: templates/users/administration.html:33
+msgid "User"
+msgstr "Benutzer"
+
+#: templates/users/administration.html:34
+msgid "Unapproved users may not be able to sumit studies"
+msgstr ""
+
+#: templates/users/administration.html:35
+msgid "If you mark an user indisposed, somone else has to do the users work"
+msgstr ""
+
+#: templates/users/administration.html:35
+msgid "Indisposed"
+msgstr "Verhindert"
+
+#: templates/users/administration.html:36
+msgid "Inactive users are not able to log into the system"
+msgstr ""
+
+#: templates/users/administration.html:36
+msgid "Active"
+msgstr "Aktiv"
+
+#: templates/users/administration.html:45
+msgid "Ms."
+msgstr "Frau"
+
+#: templates/users/administration.html:46
+msgid "Mr."
+msgstr "Herr"
+
+#: templates/users/administration.html:53
+msgid "Revoke Approval"
+msgstr ""
+
+#: templates/users/administration.html:55
+msgid "Approve"
+msgstr ""
+
+#: templates/users/administration.html:60
+#, fuzzy
+msgid "Unmark Indisposed"
+msgstr "Verhindert markieren"
+
+#: templates/users/administration.html:62
+msgid "Mark Indisposed"
+msgstr "Verhindert markieren"
+
+#: templates/users/administration.html:67
+msgid "Deactivate"
+msgstr ""
+
+#: templates/users/administration.html:69
+msgid "Activate"
+msgstr ""
+
+#: templates/users/administration.html:74
+msgid "No Users."
+msgstr "Keine Benutzer."
+
+#: templates/users/approve.html:7 templates/users/details.html:12
+msgid "Back to the List of Users"
+msgstr ""
+
+#: templates/users/profile.html:10
+msgid "Edit Profile"
+msgstr "Profile bearbeiten"
+
+#: templates/users/profile.html:12
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+#: templates/users/profile_form.html:6
+#, python-format
+msgid "Profile of %(user)s"
+msgstr "Profil von %(user)s"
+
+#: users/forms.py:26
+msgid "The two password fields didn't match."
+msgstr "Die Passwörter stimmen nicht überein."
+
+#: users/forms.py:47
+msgid "Both"
+msgstr ""
+
+#: users/forms.py:48
+msgid "Approved"
+msgstr ""
+
+#: users/forms.py:49
+msgid "Not Approved"
+msgstr ""
+
+#: users/views.py:82
+msgid "ECS - Registration"
+msgstr "ECS - Anmeldung"
+
+#: users/views.py:135
+msgid "ECS - Password Reset"
+msgstr "ECS - Passwort Zurücksetzen"
+
+#: userswitcher/forms.py:10
+msgid "user"
+msgstr "Benutzer"
+
+#: utils/common_messages.py:25 utils/common_messages.py:33
+#, python-format
+msgid "The study EC-Nr. %s was created.\n"
+msgstr "Die Studie EK-Nr. %s wurde angelegt.\n"
+
+#: utils/common_messages.py:27 utils/common_messages.py:43
+#, python-format
+msgid ""
+"Click <a href=\"#\" onclick=\"window.parent.location.href='%s';\">here</a> "
+"to view it."
+msgstr ""
+"Um sie anzusehen klicken sie <a href=\"#\" onclick=\"window.parent.location."
+"href='%s';\">hier</a>."
+
+#: utils/common_messages.py:28 utils/common_messages.py:36
+#, python-format
+msgid "New study EC-Nr. %s"
+msgstr "Neue Studie EK-Nr. %s"
+
+#: utils/common_messages.py:35
+#, python-format
+msgid ""
+"Please register <a href=\"#\" onclick=\"window.parent.location.href='%s';"
+"\">here</a> to view the study."
+msgstr ""
+"Bitte registrieren sie sich <a href=\"#\" onclick=\"window.parent.location."
+"href='%s';\">hier</a>, um die Studie einzusehen."
+
+#: utils/common_messages.py:41
+#, python-format
+msgid "Changes were made to study EC-Nr. %s.\n"
+msgstr "An der Studie EK-Nr. %s wurden Änderungen durchgeführt.\n"
+
+#: utils/common_messages.py:44
+#, python-format
+msgid "Changes to study EC-Nr. %s"
+msgstr "Änderungen an Studie EK-Nr. %s"
+
+#: utils/countries/models.py:22
+msgid "ISO alpha-2"
+msgstr ""
+
+#: utils/countries/models.py:23
+msgid "Official name (CAPS)"
+msgstr ""
+
+#: utils/countries/models.py:24
+msgid "Country name"
+msgstr ""
+
+#: utils/countries/models.py:25
+msgid "ISO alpha-3"
+msgstr ""
+
+#: utils/countries/models.py:26
+msgid "ISO numeric"
+msgstr ""
+
+#: utils/countries/models.py:30
+msgid "Country"
+msgstr "Land"
+
+#: utils/countries/models.py:31
+msgid "Countries"
+msgstr "Länder"
+
+#: utils/countries/models.py:52
+msgid "State name"
+msgstr ""
+
+#: utils/countries/models.py:53
+msgid "Abbreviation"
+msgstr "Abkürzung"
+
+#: utils/countries/models.py:57
+msgid "US State"
+msgstr ""
+
+#: utils/countries/models.py:58
+msgid "US States"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Studien"
+#~ msgstr "Studien"
+
+#, fuzzy
+#~ msgid "Studienbezug"
+#~ msgstr "Studien"
+
+#, fuzzy
+#~ msgid "Weitere Informationen"
+#~ msgstr "Allgemeine Angaben"
+
+#, fuzzy
+#~ msgid "monozentrisch"
+#~ msgstr "monozentrisch"
+
+#, fuzzy
+#~ msgid "doppelblind"
+#~ msgstr "doppelblind"
+
+#, fuzzy
+#~ msgid "DVR-Nummer"
+#~ msgstr "EK-Number"
+
+#~ msgid "Collapse"
+#~ msgstr "Weniger"
+
+#~ msgid "Expand"
+#~ msgstr "Mehr"
+
+#~ msgid ""
+#~ "Error: Invalid pdf-id. Probably your signing session expired. Please "
+#~ "retry."
+#~ msgstr ""
+#~ "Fehler: Ungültige pdf-id. Wahrscheinlich ist ihre Signierungssitzung "
+#~ "abgelaufen. Bitte versuchen sie es erneut."
+
+#~ msgid "vote_sign_error: error=[%(error)s], cause=[%(cause)s]"
+#~ msgstr "vote_sign_error: Fehler=[%(error)s], Grund=[%(cause)s]"
+
+#~ msgid "Mark User Indisposed"
+#~ msgstr "Benutzer als verhindert markieren"
+
+#~ msgid "Sort by"
+#~ msgstr "Sortieren nach"
+
+#~ msgid "Mine"
+#~ msgstr "Meine"
+
+#~ msgid "Assigned"
+#~ msgstr "Zugewiesen"
+
+#~ msgid "Open"
+#~ msgstr "Offen"
+
+#~ msgid "Proxy"
+#~ msgstr "Stellvertreter"
+
+#~ msgid "thesis"
+#~ msgstr "Diplomarbeit"
+
+#~ msgid "Preview"
+#~ msgstr "Vorschau"
+
+#~ msgid "Decline"
+#~ msgstr "Ablehnen"
+
+#~ msgid "Open Tasks"
+#~ msgstr "Offene Tätigkeiten"
+
+#~ msgid "Proxy Tasks"
+#~ msgstr "Vertetene Tätigkeiten"
+
+#~ msgid "There are no tasks for you."
+#~ msgstr "Keine Tätigkeiten"
+
+#~ msgid "creating new submission form"
+#~ msgstr "erstelle neue einreichung"
+
+#~ msgid "English"
+#~ msgstr "Englisch"

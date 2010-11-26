@@ -1,0 +1,41 @@
+{% extends "core.html" %}
+
+{% block menuSelection %}overview{% endblock %}
+
+{% block htmltitle %}ECS Dashboard{% endblock %}
+
+{% block headertitle %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+    <div id="dashboard"></div>
+{% endblock %}
+
+{% block jsbottom %}
+  {{ block.super }}
+  <script type="text/javascript">
+    (function(){
+    window.addEvent('domready', function(){
+        var widgets = [];
+        var reloadAll = function(){
+            widgets.each(function(widget){
+                widget.load();
+            });
+        };
+        var onPopupSpawned = function(popup){
+            popup.addEvent('dispose', reloadAll);
+        };
+        var el, widget;
+        {% for url in widgets %}
+            el = new Element('div', {'class': 'dashboard_widget'});
+            $('dashboard').grab(el);
+            widget = new ecs.widgets.Widget(el, {url: '{{ url }}'});
+            widgets.push(widget);
+            widget.addEvent('popupSpawned', onPopupSpawned);
+        {% endfor %}
+    });
+    })();
+  </script>
+{% endblock %}
+

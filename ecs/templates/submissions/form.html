@@ -1,0 +1,67 @@
+{% extends "submissions/base_form.html" %}
+{% load core i18n %} 
+
+{% block headertitle %}
+  <div id="info" style="display: none;"></div>
+{% endblock %}
+
+{% block header_actions %}
+    {{ block.super }}
+    <div class="floating_box">
+      <a href="" id="save-button" class="button_save">{% trans "Save" %}</a>
+      <a href="" id="validate-button" class="button_validate">{% trans "Validate" %}</a>
+      <a href="" id="submit-button" class="button_submit">
+        {% if submission and submission.current_submission_form %}
+          {% trans "Resubmit" %}
+        {% else %}
+          {% trans "Submit" %}
+        {% endif %}
+      </a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data" class="form tabbed main">
+        {{ block.super }}
+        <input type="submit" name="validate" value="validate" class="hidden" />
+        <input type="submit" name="submit" value="submit" class="hidden" />
+    </form>
+{% endblock %}
+
+{% block jsbottom %}
+    {{ block.super }}
+    <script type="text/javascript"> 
+        window.addEvent('domready', function(){
+            var formsets = [
+                '{{ measure_formset.prefix }}', 
+                '{{ routinemeasure_formset.prefix }}', 
+                '{{ nontesteduseddrug_formset.prefix }}', 
+                '{{ foreignparticipatingcenter_formset.prefix }}', 
+            ].map(function(prefix){
+                console.log(prefix);
+                return new ecs.InlineFormSet($(prefix + '_formset'), {
+                    prefix: prefix
+                });
+            });
+            
+            $('save-button').addEvent('click', function(){
+                ecs.mainForm.autosave(true);
+                return false;
+            });
+            $('validate-button').addEvent('click', function(){
+                ecs.mainForm.submit('validate');
+                return false;
+            });
+            $('submit-button').addEvent('click', function(){
+                ecs.mainForm.submit('validate');
+                return false;
+            });
+            
+            {% if valid %}
+                new MooDialog.Confirm('{% trans "You filled out the form correctly. Do want to submit the study?" %}', function(){
+                    ecs.mainForm.submit('submit');
+                });
+            {% endif %}
+        });
+    </script>
+{% endblock %}

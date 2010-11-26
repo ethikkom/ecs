@@ -1,0 +1,325 @@
+{% extends "submissions/base_form.html" %}
+{% load core i18n userutils %} 
+
+{% block headertext %}
+  {{ submission_form.submission|ec_number }} {{ submission_form.project_title }}
+{% endblock %}
+
+{% block header_actions %}
+    {{ block.super }}
+    {% if submission_form.presenter == request.user %}
+    <div class="floating_box">
+        <a href="{% url ecs.core.views.copy_submission_form submission_form_pk=submission_form.pk %}">{% trans 'Edit' %}</a>
+    </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block headernav %}
+  <div class="readonly">
+    <ul class="tab_header_groups">
+    {% block tab_header_groups %}
+        <li>
+            <a href="#">{% trans "Status" %}</a>
+            <ul class="tab_headers">
+                <li>
+                    <a href="#status_tab">{% trans 'Status' %}</a>
+                </li>
+                <li>
+                    <a href="#workflow_tab">{% trans 'Workflow' %}</a>
+                </li>
+                {% if user|has_flag:'internal' %}
+                <li>
+                    <a href="#workflow_log">{% trans 'Workflow Log' %}</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="#involved_parties_tab">{% trans 'Involved Parties' %}</a>
+                </li>
+                <li>
+                    <a href="#developer_tab">{% trans 'Developer' %}</a>
+                </li>
+            </ul>
+        </li>
+
+        {{ block.super }}
+
+        <li>
+            <a href="#">{% trans "Review" %}</a>
+            <ul class="tab_headers">
+                <li{% if not categorization_review_form.readonly %} class="readonly_review active"{% endif %}>
+                    <a href="#categorization_review_tab">{% trans "Categorization Review" %}</a>
+                </li>
+                <li{% if not retrospective_thesis_review_form.readonly %} class="readonly_review active"{% endif %}>
+                    <a href="#retrospective_thesis_review_tab">Thesis Review</a>
+                </li>
+                {% if b2_vote_review_form %}
+                    <li class="active">
+                        <a href="#b2vote_review_tab">B2 Votum</a>
+                    </li>
+                {% else %}
+                    <li{% if not vote_review_form.readonly %} class="readonly_review active"{% endif %}>
+                        <a href="#vote_review_tab">Votum</a>
+                    </li>
+                {% endif %}
+                {% for checklist, checklist_review_form in checklist_reviews %}
+                    <li{% if not checklist_review_form.readonly %} class="readonly_review active"{% endif %}>
+                        <a href="#checklist_{{ checklist.pk }}_review_form">{{ checklist }}</a>
+                    </li>
+                {% endfor %}
+                <li{% if not befangene_review_form.readonly %} class="readonly_review active"{% endif %}>
+                    <a href="#befangene_review_tab">Befangene Review</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">{% trans "Votes" %}</a>
+            <ul class="tab_headers">
+                <li><a href="#pending_votes_tab">{% trans "Pending Votes" %}</a></li>
+                <li><a href="#published_votes_tab">{% trans "Published Votes" %}</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">{% trans "Notifications" %}</a>
+            <ul class="tab_headers">
+                <li><a href="#pending_notifications_tab">{% trans "Pending Notifications" %}</a></li>
+                <li><a href="#answered_notifications_tab">{% trans "Answered Notifications" %}</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">{% trans "Communication" %}</a>
+            <ul class="tab_headers">
+                <li><a href="#communication_tab">{% trans "My Communication" %}</a></li>
+                <li><a href="#communication_overview_tab">{% trans "Communication Overview" %}</a></li>
+            </ul>
+        </li>
+    {% endblock %}
+    </ul>
+  </div>
+{% endblock %}
+
+{% block content %}
+    <div class="readonly">
+        {{ block.super }}
+    </div>
+{% endblock %}
+
+{% block tabs %}
+    <div id="status_tab">
+        {% include 'submissions/tabs/status.html' %}
+    </div>
+    <div id="involved_parties_tab">
+        {% include 'submissions/tabs/involved_parties.html' %}
+    </div>
+        <div id="developer_tab">
+            {% include 'submissions/tabs/developer.html' %}
+        </div>
+    <div id="pending_notifications_tab" class="tab">
+        <h3>{% trans "Pending Notifications" %}
+        {% if pending_notifications %}
+            <ul>
+                {% for notification in pending_notifications %}
+                    <li><a href="{% url ecs.notifications.views.view_notification notification_pk=notification.pk %}">{{ notification }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% trans "There are no pending notifications." %}</p>
+        {% endif %}
+        <a href="{% url ecs.notifications.views.select_notification_creation_type %}">{% trans "Create a new notification" %}</a>
+    </div>
+    <div id="answered_notifications_tab" class="tab">
+        <h3>{% trans "Answered Notifications" %}
+        {% if answered_notifications %}
+            <ul>
+                {% for notification in answered_notifications %}
+                    <li><a href="{% url ecs.notifications.views.view_notification notification_pk=notification.pk %}">{{ notification }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% trans "There are no answered notifications." %}</p>
+        {% endif %}
+        <a href="{% url ecs.notifications.views.select_notification_creation_type %}">{% trans "Create a new notification" %}</a>
+    </div>
+    <div id="pending_votes_tab" class="tab">
+        <h3>{% trans "Pending Votes" %}</h3>
+        {% if pending_votes %}
+            <ul>
+                {% for vote in pending_votes %}
+                    <li>{{ vote.result_text }}{% if vote.top %} (in der Sitzung am {{ vote.top.meeting.start|date:'d.m.Y' }}){% endif %}</li>
+                    {% if user|is_member_of:"EC-Signing Group" %}
+                        {% if vote.signed_at %}
+                            <a href="{% url ecs.core.views.vote_show meeting_pk='1' vote_pk=vote.pk %}" target="_blank">{% trans "Ansehen" %}</a>
+                        {% else %}
+                            <a href="{% url ecs.core.views.vote_sign meeting_pk='1' vote_pk=vote.pk %}" target="_blank">{% trans "Signieren" %}</a>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% trans "There are no pending votes." %}</p>
+        {% endif %}
+    </div>
+    <div id="published_votes_tab" class="tab">
+        <h3>{% trans "Published Votes" %}</h3>
+        {% if published_votes %}
+            <ul>
+                {% for vote in published_votes %}
+                    <li>{{ vote.result_text }}{% if vote.top %} (in der Sitzung am {{ vote.top.meeting.start|date:'d.m.Y' }}){% endif %}</li>
+                    <a href="{% url ecs.core.views.download_signed_vote meeting_pk=meeting.pk vote_pk=vote.pk %}" target="_blank">{% trans "Download" %}</a>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% trans "There are no published votes." %}</p>
+        {% endif %}
+    </div>
+    <div id="categorization_review_tab" class="tab">
+        {% block categorization_review_tab_content %}
+            {% with categorization_review_form as review_form %}
+                {% include 'submissions/review_form.inc' %}
+            {% endwith %}
+        {% endblock %}
+    </div>
+    <div id="retrospective_thesis_review_tab" class="tab">
+        {% block retrospective_thesis_review_tab_content %}
+            {% with retrospective_thesis_review_form as review_form %}
+                {% include 'submissions/review_form.inc' %}
+            {% endwith %}
+        {% endblock %}
+    </div>
+    {% if b2_vote_review_form %}
+        <div id="b2vote_review_tab" class="tab">
+            <h3>B2 Votum der Sitzung {{ vote.top.meeting.title }} am {{ vote.top.meeting.start|date:'d.m.Y' }} ({{ vote.top }})</h3>
+            <h4>Upgrade auf B1</h4>
+            {% with b2_vote_review_form as review_form %}
+                {% include 'submissions/review_form.inc' %}
+            {% endwith %}
+        </div>
+    {% else %}
+        <div id="vote_review_tab" class="tab">
+            {% block vote_review_tab_content %}
+                <h3>Votum der Sitzung {{ vote.top.meeting.title }} am {{ vote.top.meeting.start|date:'d.m.Y' }} ({{ vote.top }})</h3>
+                {% with vote_review_form as review_form %}
+                    {% include 'submissions/review_form.inc' %}
+                {% endwith %}
+            {% endblock %}
+        </div>
+    {% endif %}
+    {% for checklist, checklist_review_form in checklist_reviews %}
+    <div id="checklist_{{ checklist.pk }}_review_form" class="checklist_review_tab">
+        {% with checklist_review_form as review_form %}
+            {% include 'submissions/review_form.inc' %}
+        {% endwith %}
+    </div>
+    {% endfor %}
+    <div id="befangene_review_tab" class="tab">
+        {% block befangene_review_tab_content %}
+            {% with befangene_review_form as review_form %}
+                {% include 'submissions/review_form.inc' %}
+            {% endwith %}
+        {% endblock %}
+    </div>
+    <div id="communication_tab" class="tab">
+        <h3>{% trans "My Communication" %}</h3>
+        <div id="incoming_messages"></div>
+        <div id="outgoing_messages"></div>
+        <a class="open-in-popup" href="{% url ecs.communication.views.send_message submission_pk=submission_form.submission.pk %}">{% trans "Write a new message" %}</a>
+    </div>
+    <div id="communication_overview_tab" class="tab">
+        <h3>{% trans "Communication Overview" %}</h3>
+        <div id="communication_overview_messages"></div>
+    </div>
+    <div id="workflow_tab" class="tab">
+        {% include 'submissions/tabs/workflow.html' %}
+    </div>
+    {% if user|has_flag:'internal' %}
+    <div id="workflow_log" class="tab">
+        {% include 'submissions/tabs/workflow_log.html' %}
+    </div>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
+
+{% block jsbottom %}
+    {{ block.super }}
+    <script type="text/javascript"> 
+        window.addEvent('domready', function(){
+            new ecs.widgets.Widget('incoming_messages', {url: '{% url ecs.communication.views.incoming_message_widget %}?submission={{ submission_form.submission.pk }}'});
+            new ecs.widgets.Widget('outgoing_messages', {url: '{% url ecs.communication.views.outgoing_message_widget %}?submission={{ submission_form.submission.pk }}'});
+            new ecs.widgets.Widget('communication_overview_messages', {url: '{% url ecs.communication.views.communication_overview_widget submission_pk=submission_form.submission.pk %}'});
+            new ecs.widgets.Widget('submission_workflow_widget', {url: '{% url ecs.tasks.views.my_tasks %}?submission={{ submission_form.submission.pk }}'});
+            {% if user|has_flag:'internal' %}
+            new ecs.widgets.Widget('submission_workflow_log_widget', {url: '{% url ecs.tasks.views.task_backlog submission_pk=submission_form.submission.pk %}'});
+            {% endif %}
+            
+            new ecs.FormFieldController(['id_external_reviewer', 'id_external_reviewer_name'], {
+                sources: ['id_thesis', 'id_expedited'], 
+                auto: function(values){
+                    if(values.some(function(val){ return val == 2;})){
+                        this.setDisabled(true);
+                        this.setValues([3, ""]);
+                    }
+                    else{
+                        this.setDisabled(false);
+                    }
+                }
+            });
+            
+            new ecs.FormFieldController(['id_expedited'], {
+                sources: ['id_thesis'],
+                auto: function(values, initial){
+                    if(values[0] == 2){
+                        this.setValues([3]);
+                        this.setDisabled(true);
+                    }
+                    else{
+                        this.setDisabled(false);
+                    }
+                }
+            });
+            
+            new ecs.FormFieldController(['id_thesis'], {
+                sources: ['id_expedited'],
+                auto: function(values, initial){
+                    if(values[0] == 2){
+                        this.setValues([3]);
+                        this.setDisabled(true);
+                    }
+                    else{
+                        this.setDisabled(false);
+                    }
+                }
+            });
+            
+            var reviewToolbarItems = [function(textarea){
+                var button = new Element('a', {html: "{% trans 'Insert Annotations' %}"});
+                button.addEvent('click', function(){
+                    var popup = new ecs.widgets.Popup({url: '{% url ecs.pdfviewer.views.copy_annotations %}?submission_form_pk={{ submission_form.pk }}'});
+                    popup.addEvent('load', function(){
+                        var copyButton = new Element('input', {type: 'submit', value: "{% trans 'Copy' %}"});
+                        copyButton.addEvent('click', function(){
+                            var text = "";
+                            popup.element.getElements('input[type=checkbox]').each(function(checkbox){
+                                if(checkbox.checked){
+                                    var a = checkbox.getParent('.annotation');
+                                    text += a.getPrevious('.document').innerHTML + ", " + a.getElement('.text').innerHTML + "\n\n";
+                                }
+                            });
+                            textarea.insertAtCursor(text);
+                            textarea.fireEvent('change');
+                            popup.dispose();
+                            return false;
+                        });
+                        popup.element.grab(copyButton);
+                    });
+                    return false;
+                });
+                return button;
+            }];
+            
+            $$('form.review .CharField textarea').each(function(textarea){
+                ecs.textarea.installToolbar(textarea, reviewToolbarItems);
+            });
+
+        });
+    </script>
+{% endblock %}

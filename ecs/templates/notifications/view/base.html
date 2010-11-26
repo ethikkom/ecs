@@ -1,0 +1,41 @@
+{% extends 'core.html' %}
+
+{% block htmltitle %}ECS Elektronische Einreichung{% endblock %}
+
+{% block headertitle %}
+Meldungen zur laufenden Studie(n)
+{% endblock %}
+
+{% block headernav %}
+{% endblock %}
+
+{% block content %}
+<ul>
+    <li><a href="{% url ecs.notifications.views.notification_pdf notification_pk=notification.pk %}">Download PDF</a></li>
+</ul>  
+{% with notification.submission_forms.all as submission_forms %}
+    {% with notification.investigators.all as investigators %}
+        {% include "notifications/submission_data.html" %}
+    {% endwith %}
+{% endwith %}
+
+<table class="notification">
+    {% block table_rows %}
+        <tr>
+            <th>Kommentare</th>
+            <td>{{ notification.comments }}</td>
+        </tr>
+        <tr>
+            <th>Unterlagen</th>
+            <td>
+                {% if documents %}
+                    {% include "documents/compact_list.html" %}
+                {% else %}
+                    <i>keine</i>
+                {% endif %}
+            </td>
+        </tr>
+    {% endblock %}
+</table>
+
+{% endblock %}

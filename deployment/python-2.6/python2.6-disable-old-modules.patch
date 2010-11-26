@@ -1,0 +1,31 @@
+--- Python-2.6-orig/setup.py	2008-09-30 02:15:45.000000000 +0200
++++ Python-2.6/setup.py	2008-11-04 17:01:04.000000000 +0100
+@@ -987,7 +987,7 @@
+         # the more recent berkeleydb's db.h file first in the include path
+         # when attempting to compile and it will fail.
+         f = "/usr/include/db.h"
+-        if os.path.exists(f) and not db_incs:
++        if False and os.path.exists(f) and not db_incs:
+             data = open(f).read()
+             m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
+             if m is not None:
+@@ -1004,7 +1004,8 @@
+             else:
+                 missing.append('bsddb185')
+         else:
+-            missing.append('bsddb185')
++			pass
++#             missing.append('bsddb185')
+ 
+         # The standard Unix dbm module:
+         if platform not in ['cygwin']:
+@@ -1324,7 +1325,8 @@
+             # SunOS specific modules
+             exts.append( Extension('sunaudiodev', ['sunaudiodev.c']) )
+         else:
+-            missing.append('sunaudiodev')
++			pass
++#             missing.append('sunaudiodev')
+ 
+         if platform == 'darwin' and ("--disable-toolbox-glue" not in
+                 sysconfig.get_config_var("CONFIG_ARGS")):

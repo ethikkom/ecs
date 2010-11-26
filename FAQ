@@ -1,0 +1,57 @@
+FREQUENTLY ASKED QUESTIONS
+
+Q: Is there an administrator user created during install ?
+A: A user named "root" with password "changeme" is created at "./manage.py bootstrap" time
+
+Q: How do i recreate my database?
+A: delete ecs.db, and start with syncdb again
+
+Q: syncdb/migrate/bootstrap/runserver throws strange errors.
+A: Clean the source tree from pyc files and retry the last step.
+
+   $ fab clean_pyc
+
+Q: fab developer throws an error
+A: Recreate your virtual environment.
+
+   posix$ deactivate; rm -rf ../environment # start with bootstrap again
+   windows$ ..\environment\Scripts\deactivate.bat 
+     start the explorer and delete the environment dir, start with bootstrap
+     again.
+
+Q: How do i set up postgresql?
+A: Install postgres and change the database engine to postgres in the django
+   settings. You might want to use ident authentication. Use dropdb/createdb
+   to recreate your databse. Consult the postgresql documentation[1].
+
+Q: How do i overwrite settings?
+A: Put your local configuration in local_settings.py.
+
+   DATABASES_OVERRIDE = {}
+   DATABASES_OVERRIDE['default'] = {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'ecsdev',
+   }
+
+   Consult the django documentation[2] for more information regarding the
+   database settings or django in general.
+
+Q: How do i run the unit tests?
+A: Run ./manage.py test
+
+Q: Why is TextboxList not included?
+A: Because we are not positive about distribution rights. We prepared a helper
+   script for you to install TextboxList the right way. Please note that you
+   have to purchase a one-time per-domain license if you use it for commercial
+   use[3].
+
+   $ fab app:ecs,getTextboxList
+
+Q: Where to report bugs?
+A: Open a bugreport at https://github.com/ethikkom/ecs
+
+
+[1] http://www.postgresql.org/docs/
+[2] http://docs.djangoproject.com/en/1.2/
+[3] http://devthought.com/projects/mootools/textboxlist/
+

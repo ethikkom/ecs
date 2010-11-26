@@ -1,0 +1,24 @@
+== Autovm ==
+
+Autovm is a tool for automatically creating virtual machines to run the test
+of the ecs application. The purpose of this tool is to be called by the
+buildbot once every day (night).
+
+=== Features ===
+ * non-interactive vm creation
+ * Testing on Ubuntu-i386
+
+=== Todo ===
+ * windmill tests
+ * support vmware/virtualbox
+
+== Usage ==
+ * fab app:autovm,createvm
+
+=== Debugging ===
+ * create chroot
+   * fab app:autovm,createvm,onlychrootcreate=True,useexistingchroot=False
+   * # look at the last output line where the chroot has been copied
+   * sudo mv /tmp/bla /scratch/public-scratch/username/prebuilt-chroot
+ * use the chroot
+   * fab app:autovm,createvm

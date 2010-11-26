@@ -1,0 +1,20 @@
+{% extends 'core.html' %}
+{% load i18n %}
+
+{% block htmltitle %}Ethik-Kommission der Medizinischen Universität Wien{% endblock %}
+
+{% block content %}
+<a href="{% url ecs.users.views.administration %}">{% trans "Back to the List of Users" %}</a>
+{% with profile_user.get_profile as profile %}
+    <h2>{{ profile_user }}</h2>
+    {% include "users/base_profile.inc" %}
+
+    <form action="" method="post">
+        <input type="submit" 
+            name="{{ profile.approved_by_office|yesno:'retract,approve'}}" 
+            value="{{ profile.approved_by_office|yesno:'Bestätigung zurückziehen,Bestätigen'}}"
+        />
+    </form>
+{% endwith %}
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "core.html" %}
+{% load i18n communication core %}
+
+{% block menuSelection %}communication{% endblock %}
+
+{% block headertitle %}{% trans "Communication" %}{% endblock %}
+
+{% block content %}
+  <table class="messages">
+      <tr>
+          <th>Datum</th>
+          <th>Betreff</th>
+          <th>Unglesen</th>
+          <th>Task</th>
+          {% block extra_message_table_headers %}
+              <th>Von</th>
+              <th>An</th>
+          {% endblock %}
+          <th></th>
+      </tr>
+  {% for thread in page.object_list %}
+      <tr>
+          <td>{{ thread.last_message.timestamp|date:'d.m.Y, H:i:s' }} Uhr</td>
+          <td>
+              <a class="open-in-popup" href="{% url ecs.communication.views.read_thread thread_pk=thread.pk %}">
+                  {% if thread.submission %}{{ thread.submission|ec_number }} - {% endif %}
+                  {{ thread.subject }}
+              </a>
+          </td>
+          <td>{{ thread.last_message.unread|yesno }}</td>
+          <td>{{ thread.task|default:'-' }}</td>
+          {% block extra_message_table_cells %}
+              <td>{{ thread.last_message|sender_name:request.user }}</td>
+              <td>{{ thread.last_message|receiver_name:request.user }}</td>
+          {% endblock %}
+          <td>
+              {% block message_actions %}
+                  <a class="open-in-popup icon_read" href="{% url ecs.communication.views.read_thread thread_pk=thread.pk %}">read</a>
+                  {% if not message.thread.closed %}
+                  <a class="open-in-widget icon_done" href="{% url ecs.communication.views.close_thread thread_pk=thread.pk %}?next={{ request.path|urlencode }}" title="Erledigt">done</a>
+                  {% endif %}
+              {% endblock %}
+          </td>
+      </tr>
+  {% endfor %}
+  </table>
+  
+  <div class="paginator">
+      {% if page.has_previous %}
+          <a class="open-in-widget first_page" href="{{ request.path }}?p=1">first</a>
+          <a class="open-in-widget prev_page" href="{{ request.path }}?p={{ page.previous_page_number }}&amp;sort={{ sort }}">previous</a>
+      {% endif %}
+
+      {{ page.number }} von {{ page.paginator.num_pages }}
+      
+      {% if page.has_next %}
+          <a class="open-in-widget next_page" href="{{ request.path }}?p={{ page.next_page_number }}&amp;sort={{ sort }}">next</a>
+          <a class="open-in-widget last_page" href="{{ request.path }}?p={{ page.paginator.num_pages }}&amp;sort={{ sort }}">last</a>
+      {% endif %}
+  
+  </div>
+{% endblock %}

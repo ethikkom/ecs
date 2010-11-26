@@ -1,0 +1,18 @@
+{% extends 'core.html' %}
+
+{% block htmltitle %}ECS Elektronische Einreichung{% endblock %}
+
+{% block headertitle %}
+  Neue Meldung zur laufenden Studie(n)
+{% endblock %}
+
+{% block content %}
+    <ul>
+    {% for notification_type in notification_types %}
+        <li><a href="{% url ecs.notifications.views.create_notification notification_type_pk=notification_type.pk %}">{{ notification_type.name }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block menuSelection %}notifications{% endblock %}

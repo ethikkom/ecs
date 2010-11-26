@@ -1,0 +1,106 @@
+{% load core corepdf %}
+<p>
+    2.2 Fachgebiet: <span class="value">{{ submission_form.specialism }}</span>
+</p>
+
+<table width="624" border="0" cellpadding="2" cellspacing="0">
+    <colgroup>
+        <col width="147">
+        <col width="147">
+        <col width="157">
+        <col width="157">
+    </colgroup>
+    <tr>
+        <td colspan="2" width="298"><b>2.3 Arzneimittelstudie</b> (wenn zutreffend)</td>
+        <td colspan="2" width="317"><b>2.4 Medizinproduktestudie</b> (wenn zutreffend)</td>
+    </tr>
+    <tr>
+        <td width="147">2.3.1 Prüfsubstanz(en):</td>
+        <td width="147" class="value">{{ submission_form.pharma_checked_substance }}</td>
+        <td width="157">2.4.1 Prüfprodukt(e):</td>
+        <td width="157" class="value">{{ submission_form.medtech_checked_product }}</td>
+    </tr>
+    <tr>
+        <td width="147">2.3.2 Referenzsubstanz:</td>
+        <td width="147" class="value">{{ submission_form.pharma_reference_substance }}</td>
+        <td width="157">2.4.2 Referenzprodukt:</td>
+        <td width="157" class="value">{{ submission_form.medtech_reference_substance }}</td>
+    </tr>
+</table>
+
+<p>
+    2.5 Klinische Phase: <span class="value">{{ submission_form.clinical_phase }}</span>
+</p>
+
+<p>
+    2.6 Nehmen andere Zentren an der Studie teil: 
+    {{ submission_form.multicentric|checkbox }} ja {{ submission_form.multicentric|not|checkbox }} nein. Wenn <b>ja:</b>
+</p>
+
+<p>
+    {{ submission_form.multicentric|checkbox }} 2.6.1 im Inland{{ submission_form.foreignparticipatingcenter_set.count|checkbox }} 2.6.2 im Ausland
+</p>
+
+<p>
+    2.7 Liste der Zentren: <br/>
+    {% for ec in submission_form.ethics_commissions.all %}
+        <div class="value">{{ ec.name }}; {{ ec.zip_code }} {{ ec.city }} </div>
+    {% endfor %}
+
+    {% for pc in submission_form.foreignparticipatingcenter_set.all %}
+        <div class="value">{{ pc.name }}; {{ pc.zip_code }} {{ pc.city }} </div>
+    {% endfor %}
+</p>
+
+<p>
+    2.8 Liegen bereits Voten anderer Ethikkommissionen vor? <br/>
+    {{ submission_form.already_voted|checkbox }} ja {{ submission_form.already_voted|not|checkbox }} nein. Wenn <b>ja</b>, <b>Voten beilegen!</b>
+</p>
+
+<p>
+    2.9 Geplante Anzahl der Prüfungsteilnehmer/innen gesamt (<u>alle teilnehmenden Zentren</u>): 
+    <span class="value">{{ submission_form.subject_count }}</span>
+</p>
+
+<p>
+    2.10 Charakterisierung der Prüfungsteilnehmer/innen : 
+    2.10.1 Mindestalter: 
+    <span class="value"> {{ submission_form.subject_minage }} </span> 
+    2.10.2 Höchstalter: 
+    <span class="value"> {{ submission_form.subject_maxage }} </span>
+</p>
+
+<div class="indented">
+    <p>
+        2.10.3 Sind auch nicht persönlich Einwilligungsfähige einschließbar? 
+        {{ submission_form.subject_noncompetents|checkbox }} ja 
+        {{ submission_form.subject_noncompetents|not|checkbox }} nein
+    </p>
+
+    <p>
+        2.10.4 Einschließbar sind 
+        {{ submission_form.subject_females|checkbox }} <u>weibliche</u> (und/oder) 
+        {{ submission_form.subject_males|checkbox }} <u>männliche</u> Teilnehmer/innen.
+    </p>
+
+    <p>
+        2.10.5 Sind gebärfähige Frauen einschließbar? 
+        {{ submission_form.subject_childbearing|checkbox }} ja 
+        {{ submission_form.subject_childbearing|not|checkbox }} nein
+    </p>
+</div>
+
+<p>
+    2.11 Dauer der Teilnahme der einzelnen Prüfungsteilnehmer/innen an der Studie:
+    <span class="value"> {{ submission_form.subject_duration }} </span>
+</p>
+
+<p>
+    2.11.1 Aktive Phase: <span class="value"> {{ submission_form.subject_duration_active }} </span>
+    2.11.2 Nachkontrollen: <span class="value"> {{ submission_form.subject_duration_controls }} </span>
+</p>
+
+<p>
+    Voraussichtliche Gesamtdauer der Studie:
+    <span class="value"> {{ submission_form.subject_planned_total_duration }} </span>
+</p>

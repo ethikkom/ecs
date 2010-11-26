@@ -1,0 +1,61 @@
+ECS Development Setup
+
+
+Install the necessary prerequisites
+
+  ubuntu/debian# apt-get install python python-dev build-essential
+  opensuse# zypper install python python-dev
+  openbsd# pkg_add python  # or install via ports
+  macosx: install XCode and macports or homebrew
+  windows: install python2.6.5[1] or any newer 2.6 version[2]
+
+Bootstrap the environment
+
+  posix$ chmod +x bootstrap.py; ./bootstrap.py ../environment
+  windows$ C:\Python26\python.exe .\bootstrap.py ..\environment
+
+Activate the environment
+
+  posix$ . ../environment/bin/activate
+  windows$ ..\environment\Scripts\activate.bat
+
+Automated install of environment prerequisites
+  
+  posix$ fab appreq:ecs,flavor=developer
+  windows$ fab appreq:ecs,flavor=developer
+
+  For windows you need to adjust the ECS_GHOSTSCRIPT and ECS_GNUPG variables
+  in local_settings.py. Appreq tries to guess your ghostscript/gpg
+  installation path.
+  
+    ECS_GHOSTSCRIPT = r"C:\Programme\gs\gs8.71\bin\gswin32c.exe"
+    ECS_GNUPG = r"C:\Programme\GNU\GnuPG\gpg.exe"
+
+Automated install of environment packages
+
+  $ fab developer
+
+Setup application database
+
+  For the developer setup sqlite is used, so no additional steps have to be
+  done.
+
+  $ cd ecs
+  $ python manage.py syncdb --noinput
+  $ python manage.py migrate --noinput
+  $ python manage.py bootstrap
+
+Run Application
+
+  $ python manage.py runserver # run the development server
+
+Run the unit tests
+
+  $ python manage.py test
+
+  If your setup is correct, there should be no failing unit tests.
+
+
+[1] http://python.org/ftp/python/2.6.5/python-2.6.5.msi
+[2] http://python.org/download/releases/
+

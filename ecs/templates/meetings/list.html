@@ -1,0 +1,27 @@
+{% extends 'core.html' %}
+{% load core i18n %}
+
+{% block htmltitle %}ECS Elektronische Einreichung{% endblock %}
+
+{% block headertitle %}
+Liste aller Sitzungen
+{% endblock %}
+
+{% block headernav %}
+{% endblock %}
+
+{% block content %}
+<div id="meeting_list">
+  <h2>Sitzungen</h2>
+  <ol>
+      {% for meeting in meetings %}
+          <li>
+              <strong>{{ meeting.start|date:'d.m.Y H:i' }} Uhr: {{ meeting.title|default:"<em>Unbenannt</em>" }}</strong><br />
+                  <a href="{% url ecs.meetings.views.status meeting_pk=meeting.pk %}">{% trans "Ansehen" %}</a>
+          </li>
+      {% endfor %}
+  </ol>
+</div>
+{% endblock %}
+
+{% block menuSelection %}meetings{% endblock %}
